@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "python3 bundle.py",
+    "serve": "python3 -m http.server 8000 --directory public",
+    "test": "node scripts/static-qa.mjs"
+  },
+  "dependencies": {
+    "uglify-js": "^3.19.3"
+  }
+}

@@ -1,0 +1,22 @@
+# Render Blueprint: https://render.com/docs/blueprint-spec
+#
+# Create the service from this file with "New > Blueprint" in the Render
+# dashboard, or configure the same values by hand under "New > Static Site".
+services:
+  - type: web
+    name: personal-web-static
+    runtime: static
+    buildCommand: npm install && pip install -r requirements-build.txt && npm run build
+    staticPublishPath: ./public
+    # Optional: set GTAGID in the Render dashboard (Environment tab) to have
+    # bundle.py inject the Google Analytics snippet at build time.
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
