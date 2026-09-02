@@ -56,13 +56,19 @@ To ship a change:
 
 ### Custom domain
 
-The site's canonical URL is `https://prachisaibewar.com/` (set in
-`src/sitemap.xml` and the `<link rel="canonical">` / `og:image` tags in
-`src/index.html`). After adding the domain under **Settings > Custom Domains**
-in Render, point DNS at the values Render shows:
+The site is served at `https://prachisaibewar.com/`, which is also the URL
+hardcoded in `src/sitemap.xml` and the `og:url` / `og:image` / `twitter:image`
+tags in `src/index.html`. Changing the domain means updating both files.
 
-- apex `prachisaibewar.com` — `ALIAS`/`ANAME` record (or `A` record to the IP
-  Render displays) 
-- `www.prachisaibewar.com` — `CNAME` to the service's `.onrender.com` hostname
+DNS is managed at Cloudflare. After adding both `prachisaibewar.com` and
+`www.prachisaibewar.com` under **Settings > Custom Domains** in Render, add the
+records Render displays:
 
-Render issues and renews the TLS certificate automatically once DNS resolves.
+- apex `prachisaibewar.com` — `CNAME` to the service's `.onrender.com` hostname
+  (Cloudflare flattens CNAMEs at the apex automatically)
+- `www` — `CNAME` to the same `.onrender.com` hostname
+
+Set both records to **DNS only** (grey cloud) so Render can verify the domain
+and issue its TLS certificate. If you later enable Cloudflare's proxy (orange
+cloud), you must set SSL/TLS encryption mode to **Full (strict)** — the
+`Flexible` mode causes infinite redirect loops against Render.
