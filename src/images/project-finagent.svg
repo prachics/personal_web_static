@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="FinAgent Pro architecture: a ticker fans out to market intelligence, fundamental and technical analysis agents, which converge into a structured research report">
+  <rect width="1200" height="675" fill="#FAFAF8"/>
+  <g transform="translate(0,48)">
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#111827">
+    <text x="80" y="96" font-size="34" font-weight="bold">Multi-Agent Research</text>
+  </g>
+  <text x="80" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="19" fill="#6B7280">Real-time data in, structured equity analysis out</text>
+
+  <!-- input -->
+  <rect x="80" y="300" width="150" height="72" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="155" y="337" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="24" fill="#1D4ED8" font-weight="bold">TICKER</text>
+  <text x="155" y="359" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6B7280">market feed</text>
+
+  <!-- fan out -->
+  <g stroke="#1D4ED8" stroke-width="2" fill="none" opacity="0.55">
+    <path d="M230 336 C 290 336, 290 218, 350 218"/>
+    <path d="M230 336 L 350 336"/>
+    <path d="M230 336 C 290 336, 290 454, 350 454"/>
+  </g>
+
+  <!-- agents -->
+  <g>
+    <rect x="350" y="182" width="330" height="72" rx="10" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="378" y="215" font-family="system-ui, sans-serif" font-size="20" fill="#111827" font-weight="600">Market Intelligence</text>
+    <text x="378" y="238" font-family="system-ui, sans-serif" font-size="15" fill="#6B7280">news, sentiment</text>
+
+    <rect x="350" y="300" width="330" height="72" rx="10" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="378" y="333" font-family="system-ui, sans-serif" font-size="20" fill="#111827" font-weight="600">Fundamental</text>
+    <text x="378" y="356" font-family="system-ui, sans-serif" font-size="15" fill="#6B7280">filings, ratios</text>
+
+    <rect x="350" y="418" width="330" height="72" rx="10" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2"/>
+    <text x="378" y="451" font-family="system-ui, sans-serif" font-size="20" fill="#111827" font-weight="600">Technical</text>
+    <text x="378" y="474" font-family="system-ui, sans-serif" font-size="15" fill="#6B7280">price, indicators</text>
+  </g>
+
+  <!-- fan in -->
+  <g stroke="#1D4ED8" stroke-width="2" fill="none" opacity="0.55">
+    <path d="M680 218 C 740 218, 740 336, 800 336"/>
+    <path d="M680 336 L 800 336"/>
+    <path d="M680 454 C 740 454, 740 336, 800 336"/>
+  </g>
+  <path d="M792 330 L 806 336 L 792 342 Z" fill="#1D4ED8"/>
+
+  <!-- output -->
+  <rect x="810" y="264" width="310" height="144" rx="10" fill="#111827"/>
+  <text x="842" y="308" font-family="system-ui, sans-serif" font-size="19" fill="#FFFFFF" font-weight="600">Research Report</text>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#9CA3AF">
+    <text x="842" y="340">signal   ████████░░</text>
+    <text x="842" y="366">risk     █████░░░░░</text>
+    <text x="842" y="392">verdict  structured</text>
+  </g>
+</g>
+</svg>
