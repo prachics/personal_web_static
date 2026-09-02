@@ -1,0 +1,5 @@
+# Minimal dependencies needed to run bundle.py during a deploy build.
+# (requirements.txt additionally pins PyInstaller, which is only used by the
+# `make` target that packages bundle.py as a standalone binary.)
+beautifulsoup4==4.13.5
+python-dotenv==1.1.1
