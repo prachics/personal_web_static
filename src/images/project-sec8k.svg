@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="SEC 8-K product extractor: unstructured filings pass through an LLM and named entity recognition to produce structured company, ticker and product rows">
+  <rect width="1200" height="675" fill="#FAFAF8"/>
+  <g transform="translate(0,40)">
+  <text x="80" y="96" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#111827">Filings to Structure</text>
+  <text x="80" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="19" fill="#6B7280">LLM and NER over SEC Form 8-K announcements</text>
+
+  <!-- filing document -->
+  <g>
+    <rect x="80" y="210" width="230" height="290" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    <text x="106" y="252" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#111827">FORM 8-K</text>
+    <g stroke="#E5E7EB" stroke-width="8" stroke-linecap="round">
+      <path d="M106 282 L 284 282"/><path d="M106 306 L 262 306"/><path d="M106 330 L 284 330"/>
+      <path d="M106 354 L 228 354"/><path d="M106 402 L 284 402"/><path d="M106 426 L 250 426"/>
+      <path d="M106 450 L 284 450"/><path d="M106 474 L 206 474"/>
+    </g>
+    <path d="M106 378 L 240 378" stroke="#1D4ED8" stroke-width="8" stroke-linecap="round" opacity="0.35"/>
+  </g>
+  <text x="195" y="530" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#6B7280">unstructured</text>
+
+  <!-- arrow 1 -->
+  <path d="M330 355 L 400 355" stroke="#1D4ED8" stroke-width="2"/>
+  <path d="M394 349 L 408 355 L 394 361 Z" fill="#1D4ED8"/>
+
+  <!-- extraction -->
+  <rect x="420" y="296" width="230" height="118" rx="10" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2"/>
+  <text x="535" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-size="21" font-weight="600" fill="#111827">LLM + NER</text>
+  <text x="535" y="368" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#6B7280">entity extraction</text>
+  <text x="535" y="392" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#6B7280">schema validation</text>
+
+  <!-- arrow 2 -->
+  <path d="M670 355 L 740 355" stroke="#1D4ED8" stroke-width="2"/>
+  <path d="M734 349 L 748 355 L 734 361 Z" fill="#1D4ED8"/>
+
+  <!-- structured table -->
+  <g>
+    <rect x="760" y="240" width="360" height="230" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    <rect x="760" y="240" width="360" height="46" rx="10" fill="#111827"/>
+    <rect x="760" y="270" width="360" height="16" fill="#111827"/>
+    <g font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#FFFFFF">
+      <text x="784" y="271">company</text><text x="944" y="271">ticker</text><text x="1032" y="271">product</text>
+    </g>
+    <g font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#111827">
+      <text x="784" y="322">Acme Corp</text><text x="944" y="322" fill="#1D4ED8">ACME</text><text x="1032" y="322">Series X</text>
+      <text x="784" y="368">Northwind</text><text x="944" y="368" fill="#1D4ED8">NWND</text><text x="1032" y="368">Atlas</text>
+      <text x="784" y="414">Initech</text><text x="944" y="414" fill="#1D4ED8">INTC</text><text x="1032" y="414">Flow 2</text>
+    </g>
+    <g stroke="#E5E7EB" stroke-width="1">
+      <path d="M760 340 L 1120 340"/><path d="M760 386 L 1120 386"/>
+    </g>
+  </g>
+  <text x="940" y="530" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#6B7280">machine-readable rows</text>
+</g>
+</svg>
