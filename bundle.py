@@ -19,6 +19,7 @@ FILES=[
   "*.html",
   "favicon.ico",
   "sitemap.xml",
+  "robots.txt",
   "css/*.css",
   "js/*.js",  # we will be minimizing javascript files ourselves
   "libs/**/*",
