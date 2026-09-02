@@ -364,6 +364,106 @@ h1, h2, h3 {
 
 .education { margin-top: 52px; }
 
+.exp-context {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 62ch;
+  margin-bottom: 14px;
+}
+
+.exp-points {
+  list-style: none;
+  max-width: 62ch;
+}
+
+.exp-points li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.exp-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.exp-points strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Open Source */
+.open-source { margin-top: 52px; }
+
+.oss-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.oss-list > li {
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+}
+
+.oss-list > li > a {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+  font-family: var(--font-display);
+}
+
+.oss-list > li > a:hover { color: var(--accent); }
+
+.oss-num { color: var(--text-muted); font-weight: 400; }
+
+.oss-status {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  vertical-align: 2px;
+}
+
+.oss-status--merged {
+  color: #5b21b6;
+  border-color: #ddd6fe;
+  background: #f5f3ff;
+}
+
+.oss-list p {
+  margin-top: 7px;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 68ch;
+}
+
+.oss-list p a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
+.oss-list p a:hover { color: var(--accent); }
+
+/* Text-only project cards (no screenshot) */
+.project-card .project-link > .project-info:first-child { padding-top: 26px; }
+
 .subsection-title {
   font-family: var(--font-display);
   font-size: 1.375rem;

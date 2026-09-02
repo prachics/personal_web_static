@@ -56,7 +56,7 @@
       <div class="hero-inner">
         <p class="hero-eyebrow">AI Software Engineer</p>
         <h1 class="hero-name">Prachi<br>Saibewar</h1>
-        <p class="hero-value">Building production AI systems end to end, from real-time ranking and Generative AI workflows at Rokt to agentic RAG platforms of my own.</p>
+        <p class="hero-value">I build production AI decisioning systems, from real-time offer ranking and LLM evaluation pipelines at Rokt to agentic RAG platforms of my own. Recent work: p95 latency 185ms to 132ms, NDCG@10 0.74 to 0.82.</p>
         <div class="hero-cta">
           <a href="./Prachi_Saibewar_Resume.pdf" class="btn btn--primary" target="_blank" rel="noopener">View Resume</a>
           <a href="#contact" class="btn btn--secondary">Get in Touch</a>
@@ -78,8 +78,8 @@
         <div class="about-grid">
           <div class="about-text">
             <p>I'm a Software Engineer with 3.5+ years of experience building and owning production AI-enabled, backend, and full-stack systems end to end, from system design and API development through implementation, testing, deployment, observability, and production support.</p>
-            <p>My focus is the intersection of applied AI and reliable production systems: Generative AI, LLMs, RAG, and agentic workflows, alongside real-time decisioning, distributed systems, evaluation, and performance optimization. I currently work on Rokt's Audience and Bidding platform, and previously built research tooling at the University of Central Florida and enterprise systems at Infosys.</p>
-            <p>Based in Orlando, FL. Open to relocation.</p>
+            <p>My focus is the intersection of applied AI and reliable production systems: Generative AI, LLMs, RAG, and agentic workflows, alongside real-time decisioning, distributed systems, evaluation, and performance optimization. Most recently I worked on Rokt's Audience and Bidding platform, integrating identity-resolved customer signals from mParticle into real-time offer ranking. Before that I engineered research tooling at the University of Central Florida and enterprise financial and healthcare systems at Infosys.</p>
+            <p>Based in Orlando, FL, open to relocation. Available immediately for AI/ML and backend engineering roles.</p>
           </div>
           <div class="about-image">
             <img src="./images/profile.png" alt="Prachi Saibewar" />
@@ -104,7 +104,14 @@
             </div>
             <div class="exp-content">
               <h3 class="exp-title">AI Software Engineer</h3>
-              <p>Built Python/FastAPI backend services for real-time next-best-action ranking, combining first-party, cart, and behavioral signals to score offers, improving NDCG@10 from 0.74 to 0.82 across 50K+ offline evaluation impressions. Integrated identity-resolved customer signals through C#/.NET REST APIs and event-driven data workflows, increasing eligible-signal coverage by 23% while enforcing GDPR/CCPA consent controls. Built Generative AI/LLM experimentation workflows for Rokt's Adaptive Content Engine, automating evaluation and guardrail checks that cut rejected generations from 12.4% to 4.8%. Reduced p95 real-time decisioning latency from 185ms to 132ms through Redis caching and asynchronous signal retrieval, and built a React/TypeScript decision-debugging console that cut investigation time by 30%.</p>
+              <p class="exp-context">Rokt is an ecommerce technology company operating in the checkout transaction moment. My work sat on the Audience and Bidding platform, connecting identity-resolved customer data to real-time offer decisioning.</p>
+              <ul class="exp-points">
+                <li><strong>NDCG@10 from 0.74 to 0.82</strong> across 50K+ offline evaluation impressions, by building Python/FastAPI services for real-time next-best-action ranking over first-party, cart, and behavioral signals.</li>
+                <li><strong>p95 decisioning latency from 185ms to 132ms</strong> through Redis caching, asynchronous parallel signal retrieval, and API-call consolidation, holding ranking quality thresholds.</li>
+                <li><strong>Rejected LLM generations from 12.4% to 4.8%</strong> by automating evaluation and guardrail checks for quality, brand safety, and schema compliance in Rokt's Adaptive Content Engine.</li>
+                <li><strong>Eligible-signal coverage up 23%</strong>, integrating identity-resolved signals from mParticle through C#/.NET REST APIs and event-driven workflows while enforcing GDPR/CCPA consent controls.</li>
+                <li><strong>Investigation time down 30%</strong> via a React/TypeScript decision-debugging console instrumented with OpenTelemetry and Prometheus/PromQL.</li>
+              </ul>
             </div>
           </li>
 
@@ -115,7 +122,12 @@
             </div>
             <div class="exp-content">
               <h3 class="exp-title">Research Engineer</h3>
-              <p>Modernized the Chartalist research platform, migrating legacy PHP functionality to reusable React/TypeScript components to improve maintainability and iterative development. Implemented and optimized AlphaCore graph-analysis algorithms in Python and NetworkX, improving experimental runtime by ~30% through vectorized operations and caching. Engineered feature-engineering pipelines for Bitcoin chainlet-orbit analysis, transforming raw transaction structures into 48-dimensional daily feature vectors for downstream graph analytics and ML experiments.</p>
+              <p class="exp-context">Chartalist is an open-science blockchain machine learning platform published at <a href="https://papers.nips.cc/paper_files/paper/2022/hash/e245189a86310b6667ac633dbb922d50-Abstract-Datasets_and_Benchmarks.html" target="_blank" rel="noopener">NeurIPS 2022</a>. I worked as a research engineer on the platform and its underlying graph algorithms.</p>
+              <ul class="exp-points">
+                <li><strong>Rebuilt the Chartalist platform off legacy PHP</strong>, migrating functionality to reusable React/TypeScript components to make the research tooling maintainable and iterable.</li>
+                <li><strong>~30% faster experimental runtime</strong> implementing and optimizing the AlphaCore data-depth graph decomposition algorithm in Python, NetworkX, and NumPy through vectorized operations and caching.</li>
+                <li><strong>48-dimensional daily feature vectors</strong> from raw Bitcoin transaction structures, engineering reproducible time-series pipelines for chainlet-orbit analysis and downstream ML.</li>
+              </ul>
             </div>
           </li>
 
@@ -126,7 +138,13 @@
             </div>
             <div class="exp-content">
               <h3 class="exp-title">Senior Systems Engineer (Software Engineering)</h3>
-              <p>Developed enterprise full-stack financial applications using React, TypeScript, Node.js/Express, and Oracle SQL/PLSQL, supporting production workflows processing 3,000+ daily customer and account transactions. Improved API response times by 25% through query and index optimization, and built REST-based healthcare integrations supporting 5,000+ daily transactions while reducing data-quality defects by 20%. Expanded Jest and Postman test coverage to cut regression defects by 18%, and reduced production issue-resolution time by 40% through systematic root-cause analysis.</p>
+              <p class="exp-context">Two years owning production systems in two regulated domains: financial services and healthcare data integration.</p>
+              <ul class="exp-points">
+                <li><strong>3,000+ daily customer and account transactions</strong> on enterprise financial applications built with React, TypeScript, Node.js/Express, and Oracle SQL/PLSQL.</li>
+                <li><strong>25% faster API response times</strong>, profiling high-traffic service paths and optimizing Oracle SQL/PLSQL queries, indexes, and Node.js data-access logic.</li>
+                <li><strong>5,000+ daily transactions</strong> through REST-based healthcare member, benefits, and eligibility integrations, cutting data-quality defects by 20%.</li>
+                <li><strong>40% faster production issue resolution</strong> and 18% fewer regression defects, through root-cause analysis across React clients, REST services, and Oracle databases plus expanded Jest and Postman coverage.</li>
+              </ul>
             </div>
           </li>
         </ol>
@@ -157,8 +175,11 @@
         <h2 class="section-title">Projects</h2>
         <ul class="project-grid">
 
+          <!-- IncidentIQ: unlinked until the repo is public.
+               Once published, wrap .project-link back around this card:
+               <a href="https://github.com/prachics/IncidentIQ" target="_blank" rel="noopener" class="project-link"> ... </a> -->
           <li class="project-card">
-            <a href="https://github.com/prachics" target="_blank" rel="noopener" class="project-link">
+            <div class="project-link">
               <div class="project-img-wrap">
                 <img src="./images/project-incidentiq.png" alt="IncidentIQ" loading="lazy" />
               </div>
@@ -166,13 +187,58 @@
                 <h3 class="project-name">IncidentIQ</h3>
                 <p class="project-desc">Full-stack agentic production-support platform combining pgvector-based RAG, stateful LangGraph orchestration, structured tool calling, and human approval workflows.</p>
                 <ul class="project-tags">
-                  <li>LangGraph</li><li>RAG</li><li>FastAPI</li>
+                  <li>LangGraph</li><li>RAG</li><li>FastAPI</li><li>pgvector</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="project-card">
+            <a href="https://github.com/prachics/FinAgent" target="_blank" rel="noopener" class="project-link">
+              <div class="project-info">
+                <h3 class="project-name">FinAgent Pro ↗</h3>
+                <p class="project-desc">Multi-agent investment research platform that runs market intelligence, fundamental, and technical analysis over real-time data to produce structured stock research.</p>
+                <ul class="project-tags">
+                  <li>Multi-Agent</li><li>Python</li><li>LLM</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <li class="project-card">
+            <a href="https://github.com/prachics/geo-enabled-poi-api" target="_blank" rel="noopener" class="project-link">
+              <div class="project-info">
+                <h3 class="project-name">Geo-Enabled POI API ↗</h3>
+                <p class="project-desc">Production-ready Points-of-Interest API with spatial indexing and optimized radius queries, built on Django 5, GeoDjango, and PostgreSQL/PostGIS with an interactive map UI.</p>
+                <ul class="project-tags">
+                  <li>Django</li><li>PostGIS</li><li>Geospatial</li>
                 </ul>
               </div>
             </a>
           </li>
 
         </ul>
+
+        <div class="open-source">
+          <h3 class="subsection-title">Open Source</h3>
+          <ul class="oss-list">
+            <li>
+              <a href="https://github.com/FDataLab/Chainlet-Orbits/pull/1" target="_blank" rel="noopener">FDataLab/Chainlet-Orbits <span class="oss-num">#1</span> ↗</a>
+              <span class="oss-status oss-status--merged">Merged</span>
+              <p>Transaction ETL tooling for the codebase behind <a href="https://arxiv.org/html/2306.07974" target="_blank" rel="noopener">Chainlet Orbits</a> (KDD 2025), converting raw archives into graph edge lists.</p>
+            </li>
+            <li>
+              <a href="https://github.com/networkx/networkx/pull/7974" target="_blank" rel="noopener">networkx/networkx <span class="oss-num">#7974</span> ↗</a>
+              <span class="oss-status">In review</span>
+              <p>Adding the AlphaCore data-depth core decomposition algorithm to NetworkX, in review with maintainers.</p>
+            </li>
+            <li>
+              <a href="https://github.com/friedhelmvictor/alphacore/pull/3" target="_blank" rel="noopener">friedhelmvictor/alphacore <span class="oss-num">#3</span> ↗</a>
+              <span class="oss-status">In review</span>
+              <p>Refactor of the reference Python and R implementations from the original <a href="https://dl.acm.org/doi/10.1145/3447548.3467322" target="_blank" rel="noopener">AlphaCore</a> paper (KDD 2021).</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -196,10 +262,6 @@
           <div class="skill-group">
             <dt>DevOps & Observability</dt>
             <dd>Docker, CI/CD, Jest, Playwright, Postman, OpenTelemetry, Prometheus, PromQL, Chronosphere</dd>
-          </div>
-          <div class="skill-group">
-            <dt>AI-Assisted Development</dt>
-            <dd>Cursor, Claude Code, GitHub Copilot</dd>
           </div>
         </dl>
       </div>
