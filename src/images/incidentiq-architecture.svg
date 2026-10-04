@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">IncidentIQ architecture: FastAPI → LangGraph agent loop → approval gate → PostgreSQL with pgvector</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6B7280"/></marker>
+    <style>
+      .n{fill:#fff;stroke:#CBD5E1;stroke-width:1.5}
+      .l{font-size:14px;font-weight:600;fill:#111827;text-anchor:middle}
+      .s{font-size:11px;fill:#6B7280;text-anchor:middle}
+      .e{stroke:#6B7280;stroke-width:1.5;fill:none;marker-end:url(#a)}
+      .g{fill:#FFF7ED;stroke:#EA580C;stroke-width:2}
+      .db{fill:#F1F5F9;stroke:#94A3B8;stroke-width:1.5}
+      .grp{font-size:11px;font-weight:600;fill:#1D4ED8;letter-spacing:.08em}
+    </style>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="#FAFAF8"/>
+
+  <!-- API -->
+  <rect class="n" x="30" y="60" width="110" height="52" rx="8"/>
+  <text class="l" x="85" y="83">FastAPI</text><text class="s" x="85" y="100">on-call report</text>
+
+  <!-- Agent group -->
+  <rect x="170" y="28" width="600" height="250" rx="12" fill="none" stroke="#BFDBFE" stroke-dasharray="5 4"/>
+  <text class="grp" x="186" y="48">LANGGRAPH AGENT · CHECKPOINTED EVERY NODE</text>
+
+  <rect class="n" x="190" y="60" width="100" height="52" rx="8"/><text class="l" x="240" y="91">intake</text>
+  <rect class="n" x="320" y="60" width="100" height="52" rx="8"/><text class="l" x="370" y="83">retrieve</text><text class="s" x="370" y="100">hybrid RAG</text>
+  <rect class="n" x="450" y="60" width="100" height="52" rx="8"/><text class="l" x="500" y="91">plan</text>
+  <rect class="n" x="580" y="60" width="160" height="52" rx="8"/><text class="l" x="660" y="83">execute_tool</text><text class="s" x="660" y="100">read-only diagnostics</text>
+  <rect class="n" x="580" y="150" width="160" height="52" rx="8"/><text class="l" x="660" y="173">reflect</text><text class="s" x="660" y="190">hard iteration cap</text>
+  <rect class="n" x="450" y="150" width="100" height="52" rx="8"/><text class="l" x="500" y="181">propose</text>
+  <rect class="g" x="300" y="150" width="120" height="52" rx="8"/><text class="l" x="360" y="173">await_approval</text><text class="s" x="360" y="190" style="fill:#C2410C">human gate</text>
+  <rect class="n" x="190" y="150" width="80" height="52" rx="8"/><text class="l" x="230" y="181">act</text>
+  <rect class="n" x="190" y="222" width="80" height="40" rx="8"/><text class="l" x="230" y="247">summarize</text>
+
+  <path class="e" d="M140 86 H188"/>
+  <path class="e" d="M290 86 H318"/>
+  <path class="e" d="M420 86 H448"/>
+  <path class="e" d="M550 86 H578"/>
+  <path class="e" d="M660 112 V148"/>
+  <path class="e" d="M600 150 C560 130 530 125 515 114"/>
+  <text class="s" x="548" y="134">more evidence</text>
+  <path class="e" d="M580 176 H552"/>
+  <path class="e" d="M450 176 H422"/>
+  <path class="e" d="M300 176 H272"/>
+  <path class="e" d="M230 202 V220"/>
+
+  <!-- Data -->
+  <text class="grp" x="400" y="420" text-anchor="middle">POSTGRESQL 16 + PGVECTOR · retrieval, tool reads, checkpoints, approvals</text>
+  <rect class="db" x="30" y="330" width="170" height="64" rx="8"/><text class="l" x="115" y="357">chunks</text><text class="s" x="115" y="376">HNSW + GIN indexes</text>
+  <rect class="db" x="220" y="330" width="170" height="64" rx="8"/><text class="l" x="305" y="357">corpora</text><text class="s" x="305" y="376">incidents · runbooks · docs</text>
+  <rect class="db" x="410" y="330" width="170" height="64" rx="8"/><text class="l" x="495" y="357">agent state</text><text class="s" x="495" y="376">checkpoints · approvals · audit</text>
+  <rect class="db" x="600" y="330" width="170" height="64" rx="8"/><text class="l" x="685" y="357">mock infrastructure</text><text class="s" x="685" y="376">logs · metrics · deploys</text>
+
+  <path d="M470 278 V300 M115 300 H685" stroke="#6B7280" stroke-width="1.5" fill="none"/>
+  <path class="e" d="M115 300 V328"/>
+  <path class="e" d="M305 300 V328"/>
+  <path class="e" d="M495 300 V328"/>
+  <path class="e" d="M685 300 V328"/>
+
+  <text class="s" x="400" y="452" style="font-size:12px">Write tools (restart · scale · rollback) cannot execute without an approval row for that investigation and tool.</text>
+  <text class="s" x="400" y="472" style="font-size:12px">The gate is enforced in code in three places, not in a prompt.</text>
+</svg>
