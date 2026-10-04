@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IncidentIQ case study — Prachi Saibewar</title>
+    <meta name="description" content="How I built and evaluated IncidentIQ, an agentic incident-response platform with LangGraph, hybrid RAG on PostgreSQL/pgvector, a structural human-approval gate, and an evaluation harness that publishes its failures." />
+    <meta property="og:title" content="IncidentIQ case study — Prachi Saibewar" />
+    <meta property="og:description" content="Agentic incident response with LangGraph, hybrid RAG, pgvector, and honest evaluation." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://prachisaibewar.com/incidentiq.html" />
+    <link rel="canonical" href="https://prachisaibewar.com/incidentiq.html" />
+    <link rel="icon" type="image/png" href="./images/logo-mark.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a href="./" class="header-logo"><span class="logo-text">prachi<span class="logo-dot">.</span></span></a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="./#work" class="nav-link">Work</a></li>
+            <li><a href="./#experience" class="nav-link">Experience</a></li>
+            <li><a href="./#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="case">
+      <section class="section case-hero">
+        <div class="section-inner">
+          <p class="feature-kicker">Case study · Agentic AI · Backend</p>
+          <h1 class="hero-headline">IncidentIQ</h1>
+          <p class="case-lede">An incident-response agent for on-call engineers. It retrieves incident history and runbooks, runs read-only diagnostics, reasons over several steps, and proposes a fix. Anything that would change production stops and waits for a human.</p>
+          <div class="hero-cta">
+            <a href="https://github.com/prachics/incidentiq" class="btn btn--primary" target="_blank" rel="noopener">View on GitHub</a>
+            <a href="https://github.com/prachics/incidentiq/blob/main/docs/EVALS.md" class="btn btn--secondary" target="_blank" rel="noopener">Evaluation methodology</a>
+          </div>
+          <ul class="project-tags case-tags">
+            <li>Python</li><li>FastAPI</li><li>LangGraph</li><li>PostgreSQL 16</li><li>pgvector</li><li>Docker Compose</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--tint">
+        <div class="section-inner">
+          <h2 class="section-title">Why I built it</h2>
+          <div class="case-prose">
+            <p>Most agent demos skip the parts that matter in production: what happens when the process dies mid-investigation, what stops the model from restarting a service on its own, and whether anyone actually measured it. I built IncidentIQ around those three questions.</p>
+            <ul class="feature-points">
+              <li><strong>Durable state:</strong> the graph checkpoints after every node, so an investigation survives a crash and resumes.</li>
+              <li><strong>Structural safety:</strong> write actions are gated in code, not by prompt wording.</li>
+              <li><strong>Real evaluation:</strong> a harness that produces numbers, including bad ones.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2 class="section-title">Architecture</h2>
+          <img class="case-figure" src="./images/incidentiq-architecture.svg" alt="IncidentIQ architecture diagram" />
+          <div class="case-grid">
+            <div><h3>Bounded reasoning loop</h3><p><code>plan → execute_tool → reflect</code> has a hard iteration cap enforced in control flow. A model that always says "keep going" still terminates.</p></div>
+            <div><h3>Re-retrieval after every tool call</h3><p>Retrieval on the bare report scores Recall@5 0.461; enriched with observed error signatures it scores 0.800. Once tools surface those signatures, retrieving again is worth an iteration.</p></div>
+            <div><h3>Approval gate in three places</h3><p>A tool-class attribute, LangGraph's <code>interrupt_before</code> with a checkpoint written, and a runtime check requiring an approval row naming that investigation and tool.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tint">
+        <div class="section-inner">
+          <h2 class="section-title">Results</h2>
+          <div class="case-cols">
+            <div>
+              <h3 class="case-h3">Retrieval · 12 labelled situations</h3>
+              <table class="case-table">
+                <tr><th>Recall@5</th><td><b>0.800</b></td></tr>
+                <tr><th>Hit@5</th><td>0.917</td></tr>
+                <tr><th>MRR</th><td>0.917</td></tr>
+                <tr><th>Median latency</th><td>28.7 ms</td></tr>
+              </table>
+              <p class="case-note">Hybrid: pgvector cosine + Postgres full-text, weighted reciprocal rank fusion, bge-small embeddings, service pre-filter.</p>
+            </div>
+            <div>
+              <h3 class="case-h3">Agent · 10-scenario stratified sample</h3>
+              <table class="case-table">
+                <tr><th>Task completion</th><td><b>50%</b> <span>target ≥ 90%</span></td></tr>
+                <tr><th>Abstention accuracy</th><td><b>100%</b></td></tr>
+                <tr><th>Tool execution success</th><td>81.2% <span>32 attempts</span></td></tr>
+                <tr><th>Groundedness</th><td>not yet scored</td></tr>
+              </table>
+              <p class="case-note">Run against a local 14B model at a 3-iteration cap, so completion is a lower bound. Groundedness stays unscored until judge calibration is done.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2 class="section-title">What the 50% taught me</h2>
+          <div class="case-prose">
+            <p><strong>Where the failures are matters more than the score.</strong> Two of five failures were under-commitment: the agent reached the correct diagnosis ("connection pool exhaustion") and then abstained. That is the cost of prompts that push hard toward abstaining rather than fabricating, which is also why every abstention scenario passed. The trade-off is now measured, not assumed.</p>
+            <p>Two more were hallucinated tool arguments, both refused by the tool's own schema validation <em>after</em> a human had approved, which is exactly why validation sits behind the approval gate too.</p>
+          </div>
+          <h3 class="case-h3 case-h3--gap">Engineering findings</h3>
+          <div class="case-grid">
+            <div><h3>JSON mode guarantees syntax, not schema</h3><p>Past ~3k prompt tokens the model returned valid JSON with the wrong keys, so every field parsed as empty. Fixed with grammar-constrained decoding from a JSON Schema, then again by adding a <code>required</code> array.</p></div>
+            <div><h3>Retry classification beats retry count</h3><p>An unknown service name was treated as transient, so retries burned the whole budget. Argument errors now break the loop and return a correction ("Did you mean: checkout-service?") via trigram similarity.</p></div>
+            <div><h3>Error text is prompt</h3><p>A validator said a version "should look like 'v1.2.3'", and the agent then proposed rolling back to v1.2.3 on a service deployed at v2.27.x. Messages that feed back into an agent's context are part of its prompt.</p></div>
+            <div><h3>Hybrid retrieval needs real identifiers</h3><p>Hybrid only beat dense retrieval once incident write-ups contained the actual error tokens (<code>HikariPool</code>, <code>x509</code>). Its real value: holding Recall@5 at 0.800 without a service filter, while vector-only drops to 0.728.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tint">
+        <div class="section-inner">
+          <h2 class="section-title">What's next</h2>
+          <ul class="feature-points case-prose">
+            <li>Approval API endpoints and audit-trail exposure (Phase 4)</li>
+            <li>React/TypeScript frontend: investigation, evidence, approval, and trace views (Phase 5)</li>
+            <li>Langfuse instrumentation (provisioned, not yet emitting traces)</li>
+            <li>Full 100-scenario run against a frontier model through the existing provider interface</li>
+            <li>MCP server exposing the diagnostic tools (Phase 6)</li>
+          </ul>
+          <p class="case-back"><a href="./#work">← Back to all work</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="./" class="footer-logo"><span class="logo-text">prachi<span class="logo-dot">.</span></span></a>
+        <p class="footer-location">Orlando, FL · <a href="mailto:prachi.saibewar.cs@gmail.com">prachi.saibewar.cs@gmail.com</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
