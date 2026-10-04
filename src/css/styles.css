@@ -765,3 +765,10 @@ h1, h2, h3 {
   }
   html { scroll-behavior: auto; }
 }
+
+.hero-stack {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
