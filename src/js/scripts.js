@@ -48,11 +48,10 @@ if (topbar) {
 
 // Theme: an explicit choice is saved; otherwise the system setting applies
 function toggleTheme() {
-  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const current = root.dataset.theme || (systemDark ? 'dark' : 'light');
+  const current = root.dataset.theme === 'light' ? 'light' : 'dark';
   const next = current === 'dark' ? 'light' : 'dark';
   root.dataset.theme = next;
-  document.querySelectorAll('meta[name="theme-color"]').forEach(m => { m.content = next === 'dark' ? '#0b0d12' : '#f7f7f5'; });
+  document.querySelectorAll('meta[name="theme-color"]').forEach(m => { m.content = next === 'dark' ? '#0a0c12' : '#f7f7f5'; });
   try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked: theme lasts for this page only */ }
 }
 document.querySelectorAll('[data-theme-toggle]').forEach(btn => btn.addEventListener('click', toggleTheme));
@@ -263,6 +262,22 @@ if (flow && !reduceMotion) {
     setTimeout(tick, hold);
   };
   tick();
+}
+
+// Hero trace: replay the run every few seconds while it is on screen
+const trace = document.getElementById('trace');
+if (trace && !reduceMotion) {
+  let timer = 0;
+  const run = () => {
+    trace.classList.remove('play');
+    void trace.offsetWidth; // restart the CSS animations
+    trace.classList.add('play');
+  };
+  const io = new IntersectionObserver(([e]) => {
+    clearInterval(timer);
+    if (e.isIntersecting) { run(); timer = setInterval(run, 7500); }
+  });
+  io.observe(trace);
 }
 
 // Local time in Orlando

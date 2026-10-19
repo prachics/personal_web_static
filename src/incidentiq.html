@@ -14,8 +14,7 @@
     <meta name="twitter:title" content="IncidentIQ case study — Prachi Saibewar" />
     <meta name="twitter:description" content="An incident-response agent with durable state, a structural approval gate, tracing, an MCP server and an honest evaluation harness." />
     <meta name="twitter:image" content="https://prachisaibewar.com/images/og-incidentiq.png" />
-    <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#0a0c12" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/logo-mark.png" />
     <link rel="canonical" href="https://prachisaibewar.com/incidentiq.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +23,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <script>
       document.documentElement.classList.remove('no-js');
-      (function () { try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') { document.documentElement.dataset.theme = t; document.addEventListener('DOMContentLoaded', function () { document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.content = t === 'dark' ? '#0b0d12' : '#f7f7f5'; }); }); } } catch (e) {} })();
+      (function () { try { if (localStorage.getItem('theme') === 'light') { document.documentElement.dataset.theme = 'light'; document.addEventListener('DOMContentLoaded', function () { var m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = '#f7f7f5'; }); } } catch (e) {} })();
     </script>
   </head>
 
@@ -33,7 +32,7 @@
 
   <header class="topbar" id="site-header">
     <div class="wrap topbar-inner">
-      <a href="./index.html" class="topbar-name">Prachi Saibewar</a>
+      <a href="./index.html" class="brand" aria-label="Prachi Saibewar, home">prachi<span>.</span></a>
       <div class="topbar-actions">
         <a href="./index.html#work" class="topbar-link">Projects</a>
         <a href="./Prachi_Saibewar_Resume.pdf" class="topbar-link" target="_blank" rel="noopener">Résumé ↗</a>
@@ -48,7 +47,7 @@
     </div>
   </header>
 
-  <main id="main" class="wrap">
+  <main id="main" class="wrap" style="--c: var(--c2)">
     <header class="cs cs-hero">
       <a class="cs-back" href="./index.html#work">← All projects</a>
       <p class="kicker">Case study · Agentic AI · Backend</p>
