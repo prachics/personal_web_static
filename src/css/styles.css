@@ -340,7 +340,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .tool-grid > div:nth-child(4n) { border-right: 0; }
 .tool-grid > div:nth-last-child(-n + 4) { border-bottom: 0; }
 .tool-grid > div:hover { background: rgba(242, 184, 75, 0.06); }
-.tool-grid .num { font: 600 11.5px/1 var(--font-mono); color: var(--accent); }
+.tool-grid .num { font: 600 11.5px/1 var(--font-mono); }
 .tool-grid h3 { margin: 18px 0 12px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; color: var(--gold); }
 .tool-grid p { color: var(--on-brand-muted); font-size: 15px; line-height: 1.6; }
 
