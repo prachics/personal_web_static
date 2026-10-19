@@ -1,34 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prachi Saibewar — Software Engineer | Backend, Full-Stack &amp; Applied AI</title>
-    <meta name="description" content="Software Engineer with 3+ years building backend APIs, event-driven integrations, full-stack React/TypeScript products, and applied AI systems with Python/FastAPI, C#/.NET, RAG, and LLM evaluation. Previously Rokt (mParticle), University of Central Florida, and Infosys." />
+    <meta name="description" content="Software Engineer with 3+ years building backend APIs, event-driven integrations, full-stack React/TypeScript products and applied AI with Python/FastAPI, C#/.NET, RAG and LLM evaluation. Previously Rokt (mParticle), University of Central Florida and Infosys." />
+    <meta name="theme-color" content="#f5f1e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e1511" media="(prefers-color-scheme: dark)" />
     <meta property="og:title" content="Prachi Saibewar — Software Engineer | Backend, Full-Stack &amp; Applied AI" />
-    <meta property="og:description" content="Backend, full-stack, and applied AI engineering: Python/FastAPI, C#/.NET, React/TypeScript, distributed systems, RAG, and agentic AI." />
+    <meta property="og:description" content="Backend, full-stack and applied AI engineering: Python/FastAPI, C#/.NET, React/TypeScript, Kafka, RAG and agents. Projects with public code, tests and measured results." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://prachisaibewar.com/" />
-    <meta property="og:image" content="https://prachisaibewar.com/images/hero-bg.jpg" />
+    <meta property="og:image" content="https://prachisaibewar.com/images/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Prachi Saibewar — Software Engineer | Backend, Full-Stack &amp; Applied AI" />
-    <meta name="twitter:description" content="Backend, full-stack, and applied AI engineering: Python/FastAPI, C#/.NET, React/TypeScript, distributed systems, RAG, and agentic AI." />
-    <meta name="twitter:image" content="https://prachisaibewar.com/images/hero-bg.jpg" />
+    <meta name="twitter:description" content="Backend, full-stack and applied AI engineering: Python/FastAPI, C#/.NET, React/TypeScript, Kafka, RAG and agents." />
+    <meta name="twitter:image" content="https://prachisaibewar.com/images/og-image.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/logo-mark.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/logo-mark.png" />
     <link rel="shortcut icon" href="./images/logo-mark.png" />
     <link rel="canonical" href="https://prachisaibewar.com/" />
-    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script>
+      // Applied before first paint so a saved theme never flashes the other one.
+      document.documentElement.classList.remove('no-js');
+      (function () { try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {} })();
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Prachi Saibewar",
         "url": "https://prachisaibewar.com/",
+        "image": "https://prachisaibewar.com/images/profile.jpg",
         "jobTitle": "Software Engineer",
         "email": "mailto:prachi.saibewar.cs@gmail.com",
         "address": { "@type": "PostalAddress", "addressLocality": "Orlando", "addressRegion": "FL", "addressCountry": "US" },
@@ -36,122 +42,221 @@
           { "@type": "CollegeOrUniversity", "name": "University of Central Florida" },
           { "@type": "CollegeOrUniversity", "name": "Savitribai Phule Pune University" }
         ],
-        "knowsAbout": ["Software Engineering", "Backend Development", "REST APIs", "Distributed Systems", "Full-Stack Development", "Python", "FastAPI", "C#", ".NET", "React", "TypeScript", "PostgreSQL", "Kafka", "Retrieval-Augmented Generation", "Large Language Models", "AI Agents", "LLM Evaluation"],
+        "knowsAbout": ["Software Engineering", "Backend Development", "REST APIs", "Distributed Systems", "Event-Driven Architecture", "Full-Stack Development", "Python", "FastAPI", "C#", ".NET", "React", "TypeScript", "PostgreSQL", "Kafka", "Redis", "AWS", "OpenTelemetry", "Retrieval-Augmented Generation", "AI Agents", "Model Context Protocol", "LLM Evaluation"],
         "sameAs": ["https://github.com/prachics", "https://www.linkedin.com/in/prachi-saibewar/"]
       }
     </script>
   </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" id="site-header">
-    <div class="header-inner">
-      <a href="#hero" class="header-logo">
-        <span class="logo-text">prachi<span class="logo-dot">.</span></span>
-      </a>
+    <div class="wrap header-inner">
+      <a href="#hero" class="header-logo" aria-label="Prachi Saibewar, back to top">PS<span class="logo-dot">.</span></a>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <ul>
-            <li><a href="#work" class="nav-link">Work</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-          </ul>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#toolkit" class="nav-link">Toolkit</a></li>
+          <li><a href="#open-source" class="nav-link">Open source</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <a href="./Prachi_Saibewar_Resume.pdf" class="nav-resume" target="_blank" rel="noopener">Résumé ↗</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- HERO -->
     <section id="hero" class="hero">
-      <div class="hero-inner">
-        <p class="hero-eyebrow">Prachi Saibewar · Software Engineer</p>
-        <h1 class="hero-headline">Building production backend, full-stack &amp; applied AI systems.</h1>
-        <p class="hero-stack">Python/FastAPI · C#/.NET · React/TypeScript · Distributed Systems · RAG/Agents</p>
-        <div class="hero-cta">
-          <a href="#work" class="btn btn--primary">View Projects</a>
-          <a href="./Prachi_Saibewar_Resume.pdf" class="btn btn--secondary" target="_blank" rel="noopener">Resume</a>
-          <a href="https://www.linkedin.com/in/prachi-saibewar/" class="btn btn--secondary" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/prachics" class="btn btn--secondary" target="_blank" rel="noopener">GitHub</a>
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Software Engineer · Orlando, FL</p>
+            <h1 class="hero-headline">I build backend &amp; AI systems that hold up in <span class="serif">production.</span></h1>
+            <p class="hero-lede">I'm <strong>Prachi Saibewar</strong>, a software engineer with 3+ years building APIs, event-driven integrations, full-stack React/TypeScript products and applied AI. Most recently at <strong>Rokt (mParticle)</strong>, on real-time decisioning APIs and customer-data tooling.</p>
+            <div class="hero-cta">
+              <a href="#work" class="btn btn--primary">See my work <span aria-hidden="true">↓</span></a>
+              <a href="./Prachi_Saibewar_Resume.pdf" class="btn btn--ghost" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="mono-links">
+              <a href="https://www.linkedin.com/in/prachi-saibewar/" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a href="https://github.com/prachics" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="mailto:prachi.saibewar.cs@gmail.com">Email ↗</a>
+            </div>
+          </div>
+          <div class="portrait">
+            <div class="portrait-ring" aria-hidden="true"></div>
+            <div class="portrait-ring portrait-ring--2" aria-hidden="true"></div>
+            <div class="portrait-frame">
+              <img src="./images/profile.jpg" alt="Prachi Saibewar" width="800" height="800" />
+            </div>
+            <span class="portrait-chip">Backend / AI / Full-stack</span>
+          </div>
         </div>
-        <dl class="proof-strip">
-          <div><dt>3+ yrs</dt><dd>software engineering</dd></div>
-          <div><dt>300+</dt><dd>platform integrations</dd></div>
-          <div><dt>29%</dt><dd>lower p95 API latency</dd></div>
-          <div><dt>79% → 92%</dt><dd>grounded LLM answers</dd></div>
+        <dl class="status-strip">
+          <div><dt>Based in</dt><dd>Orlando, FL</dd></div>
+          <div><dt>Local time</dt><dd><span id="local-time">Eastern Time</span></dd></div>
+          <div><dt>Status</dt><dd class="live">Open to SWE roles</dd></div>
+          <div><dt>Previously</dt><dd>Rokt · UCF · Infosys</dd></div>
         </dl>
-        <p class="hero-now"><span class="now-dot" aria-hidden="true"></span><b>Currently:</b> building IncidentIQ's approval API and React/TypeScript frontend · open to Software Engineer roles</p>
       </div>
     </section>
 
-    <!-- SELECTED WORK -->
-    <section id="work" class="section projects">
-      <div class="section-inner">
-        <h2 class="section-title">Selected Work</h2>
+    <!-- IMPACT -->
+    <section id="impact" class="impact" aria-labelledby="impact-label">
+      <div class="wrap">
+        <p class="section-label" id="impact-label"><span class="num">01</span> Selected impact</p>
+        <div class="impact-grid">
+          <div class="reveal">
+            <p class="impact-num">29%</p>
+            <p class="impact-what">lower p95 latency on real-time decisioning APIs, 185 → 132 ms</p>
+            <p class="impact-where">Rokt (mParticle)</p>
+          </div>
+          <div class="reveal">
+            <p class="impact-num">20 → 8<small>min</small></p>
+            <p class="impact-what">time to detect production issues, after adding tracing, metrics and alerting</p>
+            <p class="impact-where">Rokt (mParticle)</p>
+          </div>
+          <div class="reveal">
+            <p class="impact-num">79 → 92%</p>
+            <p class="impact-what">grounded LLM answers, tuned against a 300+ question evaluation set</p>
+            <p class="impact-where">UCF</p>
+          </div>
+          <div class="reveal">
+            <p class="impact-num">25 → 6</p>
+            <p class="impact-what">weekly reconciliation incidents, with Kafka integrations across 5 systems</p>
+            <p class="impact-where">Infosys</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <article class="feature-project">
-          <a href="./incidentiq.html" class="feature-img">
-            <img src="./images/incidentiq-architecture.svg" alt="IncidentIQ architecture: LangGraph agent loop, approval gate, PostgreSQL with pgvector" loading="lazy" />
-          </a>
+    <!-- WORK -->
+    <section id="work" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-label"><span class="num">02</span> Selected work</p>
+            <h2 class="section-title">Built end to end. <span class="serif">Measured</span> honestly.</h2>
+          </div>
+          <p class="section-intro">Public code, tests, CI and numbers you can reproduce from the repository, including the ones that miss their target.</p>
+        </div>
+
+        <article class="feature reveal">
           <div class="feature-body">
-            <p class="feature-kicker">Featured · Agentic AI · Backend</p>
-            <h3 class="feature-name">IncidentIQ</h3>
-            <p class="feature-problem">An incident-response agent that helps on-call engineers diagnose production issues with evidence, and never changes production without human approval.</p>
-            <ul class="feature-points">
-              <li>LangGraph agent with persisted state that survives process restarts</li>
-              <li>Hybrid retrieval: pgvector similarity + Postgres full-text, fused with reciprocal rank fusion</li>
-              <li>Write actions gated structurally, not by prompt; evaluation harness publishes every result</li>
-            </ul>
-            <div class="metric-row">
-              <span class="metric"><b>0.80</b> Recall@5</span>
-              <span class="metric"><b>0.92</b> MRR</span>
+            <p class="feature-kicker">Agentic AI · Backend · Full-stack</p>
+            <h3 class="feature-name"><a href="./incidentiq.html">IncidentIQ</a></h3>
+            <p class="feature-problem">An incident-response agent for on-call engineers. It reads logs, metrics and past incidents, finds the likely cause, and proposes a fix. Nothing that changes production runs until a person approves it.</p>
+            <div class="flow" id="iq-flow" aria-label="How an investigation runs">
+              <span class="flow-label">How an investigation runs</span>
+              <span class="flow-step">Report</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">Retrieve</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">Run tools</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">Reflect</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">Propose</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step gate">Human approval</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">Act once</span>
             </div>
-            <ul class="project-tags">
-              <li>Python</li><li>FastAPI</li><li>LangGraph</li><li>PostgreSQL</li><li>pgvector</li><li>Docker</li>
+            <ul class="feature-points">
+              <li><strong>Survives crashes:</strong> LangGraph state is checkpointed after every step, so an investigation resumes where it stopped.</li>
+              <li><strong>Gated in code, not in the prompt:</strong> write tools need an approval row, and an approved action runs exactly once through idempotency keys.</li>
+              <li><strong>Observable and pluggable:</strong> OpenTelemetry traces in Jaeger or Langfuse, Prometheus metrics, and an MCP server for the read-only tools.</li>
             </ul>
-            <p class="feature-status">Approval API, React frontend, and tracing in progress.</p>
-            <div class="feature-actions"><a href="./incidentiq.html" class="btn btn--primary btn--sm">Read case study</a><a href="https://github.com/prachics/incidentiq" class="btn btn--secondary btn--sm" target="_blank" rel="noopener">GitHub</a></div>
+            <div class="metrics">
+              <div><b>0.80</b><span>Recall@5, hybrid retrieval</span></div>
+              <div><b>70%</b><span>Task completion <em>· target 90%</em></span></div>
+              <div><b>100%</b><span>Abstention accuracy</span></div>
+              <div><b>695</b><span>Backend tests, CI on every push</span></div>
+            </div>
+            <div class="feature-actions">
+              <a href="./incidentiq.html" class="btn btn--primary btn--sm">Read the case study <span aria-hidden="true">→</span></a>
+              <a href="https://github.com/prachics/incidentiq" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="feature-media">
+            <div class="browser">
+              <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>incidentiq · investigation</span></div>
+              <img src="./images/incidentiq-demo.gif" alt="IncidentIQ web UI: the agent reads payment-service and payment-db logs, concludes payment-db is out of disk space, and stops at the approval panel" width="1024" height="688" loading="lazy" />
+            </div>
+            <p class="media-caption">A real run on a local 14B model, sped up. It stops at the approval panel.</p>
+            <ul class="tags" style="margin-top:18px">
+              <li>Python</li><li>FastAPI</li><li>LangGraph</li><li>PostgreSQL</li><li>pgvector</li><li>React</li><li>TypeScript</li><li>OpenTelemetry</li><li>MCP</li><li>Docker</li>
+            </ul>
           </div>
         </article>
 
-        <ul class="project-grid">
-          <li class="project-card">
-            <a href="https://chartalist.org" target="_blank" rel="noopener" class="project-link">
-              <div class="project-img-wrap">
-                <img src="./images/project-chartalist.svg" alt="Chartalist dataset catalogue architecture" loading="lazy" />
-              </div>
-              <div class="project-info">
-                <h3 class="project-name">Chartalist.org ↗</h3>
-                <p class="project-desc">React/TypeScript rebuild of the legacy PHP catalogue for ML-ready blockchain graph datasets from the NeurIPS 2022 Chartalist paper.</p>
-                <ul class="project-tags"><li>React</li><li>TypeScript</li></ul>
-              </div>
+        <article class="feature feature--flip reveal">
+          <div class="feature-body">
+            <p class="feature-kicker">Backend · Geospatial</p>
+            <h3 class="feature-name"><a href="https://github.com/prachics/geo-enabled-poi-api" target="_blank" rel="noopener">Geo POI API</a></h3>
+            <p class="feature-problem">A REST API and map UI for finding points of interest within a radius, filtered by category and rating, with the distance to each result.</p>
+            <div class="flow" aria-label="How a radius query runs">
+              <span class="flow-label">How a radius query runs</span>
+              <span class="flow-step">lat · lng · radius</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">ST_DWithin on geography</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">GIST index</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">Results + distance</span>
+            </div>
+            <ul class="feature-points">
+              <li><strong>Index-backed radius search</strong> on a PostGIS geography column, so distances are in meters and the spatial index is used.</li>
+              <li><strong>Benchmarked with wrk</strong> under Gunicorn on 100,000 POIs, with random query centers so the cache can't hide the database.</li>
+            </ul>
+            <div class="metrics metrics--3">
+              <div><b>100k</b><span>POIs in the benchmark</span></div>
+              <div><b>1.7 ms</b><span>Median, cached · 2,547 req/s</span></div>
+              <div><b>222 ms</b><span>Median, uncached 5 km query</span></div>
+            </div>
+            <div class="feature-actions">
+              <a href="https://github.com/prachics/geo-enabled-poi-api" class="btn btn--primary btn--sm" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://github.com/prachics/geo-enabled-poi-api#results" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">Benchmark ↗</a>
+            </div>
+          </div>
+          <div class="feature-media">
+            <div class="browser">
+              <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000 · map UI</span></div>
+              <img src="./images/poi-api-map.jpg" alt="Map UI: a 1 km restaurant search around UCF, with the searched radius outlined and every result inside it" width="1600" height="1000" loading="lazy" />
+            </div>
+            <ul class="tags" style="margin-top:18px">
+              <li>Django</li><li>DRF</li><li>GeoDjango</li><li>PostGIS</li><li>Gunicorn</li><li>Docker</li><li>GitHub Actions</li>
+            </ul>
+          </div>
+        </article>
+
+        <p class="more-title">More work</p>
+        <ul class="cards">
+          <li>
+            <a class="card reveal" href="https://chartalist.org" target="_blank" rel="noopener">
+              <span class="card-kicker">Full-stack · Research platform</span>
+              <h3>Chartalist.org <span class="arrow" aria-hidden="true">↗</span></h3>
+              <p>Led the rebuild of the NeurIPS 2022 blockchain-dataset platform from legacy PHP to Next.js/TypeScript and Node.js. 92/100 desktop Lighthouse performance.</p>
+              <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Node.js</li></ul>
             </a>
           </li>
-          <li class="project-card">
-            <a href="https://github.com/prachics/geo-enabled-poi-api" target="_blank" rel="noopener" class="project-link">
-              <div class="project-img-wrap">
-                <img src="./images/project-poi-api.jpg" alt="GeoAPI Explorer map interface" loading="lazy" />
-              </div>
-              <div class="project-info">
-                <h3 class="project-name">Geo-Enabled POI API ↗</h3>
-                <p class="project-desc">Points-of-interest REST API with spatial indexing, optimized radius queries, and a map UI. Benchmarked at 245 req/s with 35 ms median latency for 5 km radius queries.</p>
-                <ul class="project-tags"><li>Django</li><li>PostGIS</li><li>REST API</li></ul>
-              </div>
+          <li>
+            <a class="card reveal" href="https://github.com/prachics/FinAgent" target="_blank" rel="noopener">
+              <span class="card-kicker">Multi-agent · LLM</span>
+              <h3>FinAgent Pro <span class="arrow" aria-hidden="true">↗</span></h3>
+              <p>Multi-agent equity research: six agent functions for market data, fundamentals, technicals, risk, ESG and the final report.</p>
+              <ul class="tags"><li>Python</li><li>CrewAI</li><li>Streamlit</li></ul>
             </a>
           </li>
-          <li class="project-card">
-            <a href="https://github.com/prachics/FinAgent" target="_blank" rel="noopener" class="project-link">
-              <div class="project-img-wrap">
-                <img src="./images/project-finagent.svg" alt="FinAgent Pro architecture diagram" loading="lazy" />
-              </div>
-              <div class="project-info">
-                <h3 class="project-name">FinAgent Pro ↗</h3>
-                <p class="project-desc">Multi-agent equity research: market, fundamental, and technical analysis agents producing structured reports.</p>
-                <ul class="project-tags"><li>Python</li><li>Multi-Agent</li><li>LLM</li></ul>
-              </div>
+          <li>
+            <a class="card reveal" href="https://github.com/prachics/LLM-SEC-8K-Product-Extractor" target="_blank" rel="noopener">
+              <span class="card-kicker">LLM extraction · NLP</span>
+              <h3>SEC 8-K Product Extractor <span class="arrow" aria-hidden="true">↗</span></h3>
+              <p>Finds new-product announcements in SEC 8-K filings with an LLM plus named-entity recognition, and emits structured company, ticker and filing-time records.</p>
+              <ul class="tags"><li>Python</li><li>OpenAI API</li><li>spaCy</li></ul>
             </a>
           </li>
         </ul>
@@ -159,199 +264,181 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section experience section--tint">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Experience</h2>
-          <a href="./Prachi_Saibewar_Resume.pdf" class="resume-link" target="_blank" rel="noopener">Full resume (PDF) ↗</a>
+    <section id="experience" class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-label"><span class="num">03</span> Experience</p>
+            <h2 class="section-title">Production work with <span class="serif">measured</span> outcomes.</h2>
+          </div>
+          <p class="section-intro">Customer-data infrastructure at Rokt, RAG and research tooling at UCF, and banking and healthcare backends at Infosys.</p>
         </div>
-        <ol class="experience-list">
-          <li class="experience-item">
-            <div class="exp-meta">
-              <span class="exp-date">Sep 2025 - Aug 2026</span>
-              <span class="exp-company">Rokt (mParticle)</span>
-            </div>
-            <div class="exp-content">
+        <ol class="exp-list">
+          <li class="exp reveal">
+            <span class="exp-num">01</span>
+            <div class="exp-meta"><span>Sep 2025 — Aug 2026</span><br /><span>USA</span></div>
+            <div>
+              <p class="exp-company">Rokt (mParticle)</p>
               <h3 class="exp-title">Software Engineer</h3>
+              <p class="exp-summary">Real-time decisioning APIs, identity tooling and production reliability on a customer-data platform.</p>
               <ul class="exp-points">
-                <li><strong>~30% faster identity investigations</strong>: Customer 360 / IDSync workflows in C#/.NET and React/TypeScript</li>
-                <li><strong>29% lower p95 latency</strong>: 185 → 132 ms using Redis caching and async parallel retrieval</li>
-                <li><strong>300+ integrations</strong>: consent-aware audience activation across a high-volume customer-data platform</li>
+                <li>Cut p95 latency of real-time decisioning APIs by <b>29% (185 → 132 ms)</b> with Redis caching and parallel asyncio retrieval under production load.</li>
+                <li>Owned 0→1 a React/TypeScript identity-tracing tool for the mParticle CDP (React Query over C#/.NET APIs, visualizing profile merges): investigations <b>about 30% faster</b>.</li>
+                <li>Built identity-resolved and predictive customer attributes with C#/.NET APIs and event-driven pipelines that enforce GDPR consent and CCPA opt-outs: <b>eligible customer signals +23%</b>.</li>
+                <li>Added OpenTelemetry tracing, Prometheus metrics and Chronosphere alerting, and joined the on-call rotation: <b>detection 20 → 8 min, resolution 60 → 25 min</b>.</li>
+                <li>Built Python LLM evaluation and guardrail workflows with structured outputs for ACE, Rokt's generative ad-content engine: <b>rejected generations 12.4% → 4.8%</b>.</li>
               </ul>
+              <ul class="tags"><li>C#/.NET</li><li>Python</li><li>FastAPI</li><li>React</li><li>TypeScript</li><li>Redis</li><li>OpenTelemetry</li><li>AWS</li></ul>
             </div>
           </li>
-          <li class="experience-item">
-            <div class="exp-meta">
-              <span class="exp-date">Jun 2025 - Sep 2025</span>
-              <span class="exp-company">University of Central Florida</span>
-            </div>
-            <div class="exp-content">
+          <li class="exp reveal">
+            <span class="exp-num">02</span>
+            <div class="exp-meta"><span>Jun 2025 — Sep 2025</span><br /><span>Orlando, FL</span></div>
+            <div>
+              <p class="exp-company">University of Central Florida</p>
               <h3 class="exp-title">Research Engineer</h3>
+              <p class="exp-summary">RAG and LLM evaluation for graph-analytics research, and the Chartalist.org rebuild.</p>
               <ul class="exp-points">
-                <li><strong>79% → 92% grounded responses</strong>: Python/FastAPI RAG on PostgreSQL/pgvector, tuned against a 300+ query benchmark</li>
-                <li><strong>98%+ schema-valid outputs</strong>: structured outputs with validation, retries, guardrails, and human review</li>
-                <li><strong>Chartalist.org</strong>: rebuilt from legacy PHP to React/TypeScript</li>
+                <li>Built a 300+ question evaluation set to tune retrieval, chunking and prompts: <b>grounded answers 79% → 92%</b>.</li>
+                <li>Added schema validation, retries and human review: <b>98%+ valid responses, 35% fewer manual corrections</b>.</li>
+                <li>Built a Python/FastAPI RAG search service over PostgreSQL/pgvector for research papers and code: <b>lookups ~20 min → under 5</b>.</li>
+                <li>Led the Chartalist.org rebuild from legacy PHP to Next.js/TypeScript and Node.js: <b>92/100 desktop Lighthouse performance</b>.</li>
               </ul>
+              <ul class="tags"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>pgvector</li><li>LLM APIs</li><li>Next.js</li><li>TypeScript</li></ul>
             </div>
           </li>
-          <li class="experience-item">
-            <div class="exp-meta">
-              <span class="exp-date">Jun 2021 - Jul 2023</span>
-              <span class="exp-company">Infosys</span>
-            </div>
-            <div class="exp-content">
+          <li class="exp reveal">
+            <span class="exp-num">03</span>
+            <div class="exp-meta"><span>Jun 2021 — Jul 2023</span><br /><span>Remote</span></div>
+            <div>
+              <p class="exp-company">Infosys</p>
               <h3 class="exp-title">Software Engineer</h3>
+              <p class="exp-summary">Banking and healthcare-payer backends: transactions, member enrollment and Kafka integrations.</p>
               <ul class="exp-points">
-                <li><strong>5,000+ daily transactions</strong>: C#/.NET REST services and SQL-backed onboarding and transaction workflows</li>
-                <li><strong>Reconciliation incidents ~25 → 6 per week</strong>: Kafka sync across 5 systems with idempotent consumers and DLQs</li>
-                <li><strong>25% faster APIs</strong>: query, index, and data-access optimization</li>
+                <li>Built fault-tolerant Kafka integrations across 5 enterprise systems (idempotent consumers, retries, dead-letter queues): <b>weekly reconciliation incidents 25 → 6</b>.</li>
+                <li>Built ASP.NET Core banking APIs with SQL Server and Dapper, with validation and business rules for <b>5,000+ daily transactions</b>.</li>
+                <li>Tracked down slow member-enrollment queries and tuned indexes and Oracle PL/SQL stored procedures: <b>API ~25% faster</b>.</li>
+                <li>Wrote unit, integration and API tests for eligibility workflows: <b>regression defects −18%</b>, validation 2 days → under 1.</li>
               </ul>
+              <ul class="tags"><li>C#/.NET</li><li>ASP.NET Core</li><li>SQL Server</li><li>Oracle PL/SQL</li><li>Kafka</li><li>Kubernetes</li><li>Python</li></ul>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- OPEN SOURCE -->
-    <section id="open-source" class="section">
-      <div class="section-inner">
-        <h2 class="section-title">Open Source &amp; Research</h2>
-        <ul class="oss-list">
-          <li>
-            <a href="https://github.com/FDataLab/Chainlet-Orbits/pull/1" target="_blank" rel="noopener">FDataLab/Chainlet-Orbits <span class="oss-num">#1</span> ↗</a>
-            <span class="oss-status oss-status--merged">Merged</span>
-            <p>Transaction ETL tooling for the codebase behind <a href="https://arxiv.org/html/2306.07974" target="_blank" rel="noopener">Chainlet Orbits</a> (KDD 2025), converting raw archives into graph edge lists.</p>
-          </li>
-          <li>
-            <a href="https://github.com/networkx/networkx/pull/7974" target="_blank" rel="noopener">networkx/networkx <span class="oss-num">#7974</span> ↗</a>
-            <span class="oss-status">In review</span>
-            <p>Adding the AlphaCore data-depth core decomposition algorithm to NetworkX.</p>
-          </li>
-          <li>
-            <a href="https://github.com/friedhelmvictor/alphacore/pull/3" target="_blank" rel="noopener">friedhelmvictor/alphacore <span class="oss-num">#3</span> ↗</a>
-            <span class="oss-status">In review</span>
-            <p>Refactor of the reference Python and R implementations from the original <a href="https://dl.acm.org/doi/10.1145/3447548.3467322" target="_blank" rel="noopener">AlphaCore</a> paper (KDD 2021).</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- WRITING -->
-    <section id="writing" class="section section--tint">
-      <div class="section-inner">
-        <h2 class="section-title">Writing</h2>
-        <ul class="writing-list">
-          <li>
-            <a href="./incidentiq.html">What a 50% agent score taught me</a>
-            <p>Case study: building and honestly evaluating an incident-response agent with LangGraph, hybrid RAG, and a structural approval gate.</p>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/prachi-saibewar/recent-activity/all/" target="_blank" rel="noopener">Read access vs. action in AI email assistants ↗</a>
-            <p>Indirect prompt injection, and why an assistant that summarizes an inbox shouldn't also be able to send email.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section about">
-      <div class="section-inner">
-        <h2 class="section-title">About</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>I'm a Software Engineer with 3+ years building production APIs, distributed integrations, full-stack products, and applied AI systems.</p>
-            <p>My background spans high-volume customer-data infrastructure at Rokt (mParticle), RAG and research tooling at UCF, and enterprise backend systems at Infosys. I'm strongest where backend engineering meets product delivery and applied AI. Based in Orlando, FL.</p>
+    <!-- TOOLKIT -->
+    <section id="toolkit" class="section toolkit">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-label"><span class="num">04</span> Toolkit</p>
+            <h2 class="section-title">What I reach for to <span class="serif" style="color:var(--gold)">ship.</span></h2>
           </div>
-          <div class="about-image">
-            <img src="./images/profile.jpg" alt="Prachi Saibewar" width="440" height="440" loading="lazy" />
-          </div>
+          <p class="section-intro">Grouped by the job each tool does.</p>
+        </div>
+        <div class="tool-grid">
+          <div><span class="num">01</span><h3>Languages</h3><p>Python · C# · TypeScript · JavaScript · SQL · Java · Bash</p></div>
+          <div><span class="num">02</span><h3>Backend &amp; APIs</h3><p>FastAPI · ASP.NET Core · Django REST Framework · Node.js · REST / OpenAPI · OAuth 2.0 · JWT</p></div>
+          <div><span class="num">03</span><h3>Data &amp; messaging</h3><p>PostgreSQL (pgvector, PostGIS) · SQL Server · Oracle PL/SQL · Redis · Kafka · event-driven design</p></div>
+          <div><span class="num">04</span><h3>Applied AI</h3><p>RAG · embeddings · tool calling · AI agents · LangGraph · LangChain · MCP · LLM evaluation &amp; guardrails</p></div>
+          <div><span class="num">05</span><h3>Frontend</h3><p>React · Next.js · React Query · Tailwind CSS · HTML/CSS · frontend performance</p></div>
+          <div><span class="num">06</span><h3>Cloud &amp; delivery</h3><p>AWS (Lambda, S3, RDS, ECS, SQS) · Docker · Kubernetes · Terraform · GitHub Actions</p></div>
+          <div><span class="num">07</span><h3>Observability</h3><p>OpenTelemetry · Prometheus · Grafana · Chronosphere · on-call and production debugging</p></div>
+          <div><span class="num">08</span><h3>Testing</h3><p>pytest · Jest · Playwright · unit, integration and API tests in CI</p></div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section skills section--tint">
-      <div class="section-inner">
-        <h2 class="section-title">Skills</h2>
-        <dl class="skills-grid">
-          <div class="skill-group">
-            <dt>Backend &amp; Distributed Systems</dt>
-            <dd>Python, C#, SQL, FastAPI, .NET/ASP.NET Core, Node.js, REST APIs, Microservices, Event-Driven Architecture, Kafka, Redis, Async Processing</dd>
+    <!-- OPEN SOURCE & WRITING -->
+    <section id="open-source" class="section">
+      <div class="wrap">
+        <p class="section-label"><span class="num">05</span> Open source &amp; writing</p>
+        <h2 class="section-title" style="margin-bottom:48px">Contributions and <span class="serif">notes.</span></h2>
+        <div class="two-col">
+          <div>
+            <p class="list-title">Open source &amp; research code</p>
+            <ul class="row-list">
+              <li><a class="row" href="https://github.com/FDataLab/Chainlet-Orbits/pull/1" target="_blank" rel="noopener">
+                <span class="row-name">FDataLab/Chainlet-Orbits #1 <span class="arrow" aria-hidden="true">↗</span></span><span class="badge badge--done">Merged</span>
+                <span class="row-desc">Transaction ETL tooling for the codebase behind Chainlet Orbits (KDD 2025): raw archives into graph edge lists.</span></a></li>
+              <li><a class="row" href="https://github.com/networkx/networkx/pull/7974" target="_blank" rel="noopener">
+                <span class="row-name">networkx/networkx #7974 <span class="arrow" aria-hidden="true">↗</span></span><span class="badge">In review</span>
+                <span class="row-desc">Adds the AlphaCore data-depth core decomposition algorithm to NetworkX.</span></a></li>
+              <li><a class="row" href="https://github.com/friedhelmvictor/alphacore/pull/3" target="_blank" rel="noopener">
+                <span class="row-name">friedhelmvictor/alphacore #3 <span class="arrow" aria-hidden="true">↗</span></span><span class="badge">In review</span>
+                <span class="row-desc">Refactor of the reference Python and R implementations from the AlphaCore paper (KDD 2021).</span></a></li>
+            </ul>
           </div>
-          <div class="skill-group">
-            <dt>Frontend &amp; Product</dt>
-            <dd>React, TypeScript, JavaScript, Next.js, Redux, HTML/CSS</dd>
+          <div>
+            <p class="list-title">Writing</p>
+            <ul class="row-list">
+              <li><a class="row" href="./incidentiq.html">
+                <span class="row-name">Fix the measurement before the agent <span class="arrow" aria-hidden="true">→</span></span><span class="badge">Case study</span>
+                <span class="row-desc">Building and honestly evaluating IncidentIQ: what moved the score, and the engineering findings along the way.</span></a></li>
+              <li><a class="row" href="https://www.linkedin.com/in/prachi-saibewar/recent-activity/all/" target="_blank" rel="noopener">
+                <span class="row-name">Read access vs. action in AI email assistants <span class="arrow" aria-hidden="true">↗</span></span><span class="badge">LinkedIn</span>
+                <span class="row-desc">Indirect prompt injection, and why an assistant that summarizes an inbox shouldn't also be able to send email.</span></a></li>
+            </ul>
           </div>
-          <div class="skill-group">
-            <dt>Data, Cloud &amp; Reliability</dt>
-            <dd>PostgreSQL, MongoDB, AWS, Docker, Kubernetes, CI/CD, GitHub Actions, OpenTelemetry, Prometheus/PromQL, Chronosphere, Jest, Playwright</dd>
-          </div>
-          <div class="skill-group">
-            <dt>Applied AI</dt>
-            <dd>LLMs, RAG, AI Agents, LangGraph, LangChain, pgvector, Vector Search, LLM &amp; Retrieval Evaluation, Structured Outputs, Tool Calling, Guardrails, Human-in-the-Loop</dd>
-          </div>
-        </dl>
+        </div>
       </div>
     </section>
 
     <!-- EDUCATION -->
-    <section id="education" class="section">
-      <div class="section-inner">
-        <h2 class="section-title">Education</h2>
-        <div class="edu-item">
-          <div class="exp-meta">
-            <span class="exp-date">Aug 2023 - May 2025</span>
-            <span class="exp-company">University of Central Florida</span>
-          </div>
-          <p class="edu-degree">M.S. Computer Science, GPA 3.9</p>
+    <section id="education" class="section edu">
+      <div class="wrap edu-grid">
+        <div>
+          <p class="section-label"><span class="num">06</span> Education</p>
+          <h2 class="section-title">Strong foundations, <span class="serif">applied.</span></h2>
         </div>
-        <div class="edu-item">
-          <div class="exp-meta">
-            <span class="exp-date">Aug 2016 - May 2020</span>
-            <span class="exp-company">Savitribai Phule Pune University</span>
-          </div>
-          <p class="edu-degree">B.E. Computer Science</p>
-        </div>
+        <ul class="edu-list">
+          <li><span class="edu-when">2025</span><div><p class="edu-what">M.S. Computer Science · GPA 3.9</p><p class="edu-where">University of Central Florida</p></div></li>
+          <li><span class="edu-when">2020</span><div><p class="edu-what">B.E. Computer Science</p><p class="edu-where">Savitribai Phule Pune University</p></div></li>
+          <li><span class="edu-when">Credential</span><div><p class="edu-what">AWS Certified Solutions Architect – Associate</p><p class="edu-where">Amazon Web Services</p></div></li>
+          <li><span class="edu-when">Credential</span><div><p class="edu-what">AWS Certified Cloud Practitioner</p><p class="edu-where">Amazon Web Services</p></div></li>
+        </ul>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <div class="section-inner">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="contact-intro">Open to Software Engineer roles across backend, full-stack, and applied AI. Email me directly or use the form.</p>
+    <section id="contact" class="section">
+      <div class="wrap">
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Hiring for backend, AI or full-stack?</p>
+        <h2 class="contact-title">Let's build something <span class="serif">reliable.</span></h2>
         <div class="contact-grid">
-          <div class="contact-info">
-            <p class="contact-email"><a href="mailto:prachi.saibewar.cs@gmail.com">prachi.saibewar.cs@gmail.com</a></p>
-            <ul class="contact-links">
-              <li><a href="https://github.com/prachics" target="_blank" rel="noopener">GitHub ↗</a></li>
-              <li><a href="https://www.linkedin.com/in/prachi-saibewar/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-              <li><a href="./Prachi_Saibewar_Resume.pdf" target="_blank" rel="noopener">Resume PDF ↗</a></li>
-            </ul>
+          <div>
+            <a class="contact-email" href="mailto:prachi.saibewar.cs@gmail.com">prachi.saibewar.cs@gmail.com ↗</a>
+            <p class="contact-note">Open to Software Engineer roles across backend, full-stack and applied AI. Email me directly or send a note with the form.</p>
+            <div class="mono-links">
+              <a href="https://www.linkedin.com/in/prachi-saibewar/" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a href="https://github.com/prachics" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="./Prachi_Saibewar_Resume.pdf" target="_blank" rel="noopener">Résumé PDF ↗</a>
+            </div>
           </div>
           <form action="https://formspree.io/f/xnpqvjdo" method="POST" class="contact-form">
             <label for="contact-email-input">Your email</label>
-            <input type="email" id="contact-email-input" name="_replyto" placeholder="you@example.com" required />
+            <input type="email" id="contact-email-input" name="_replyto" placeholder="you@company.com" autocomplete="email" required />
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
-            <button type="submit" class="btn btn--primary">Send Message</button>
+            <textarea id="contact-message" name="message" rows="5" placeholder="The role, the team, or what you're building" required></textarea>
+            <button type="submit" class="btn btn--primary">Send message <span aria-hidden="true">→</span></button>
           </form>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="#hero" class="footer-logo">
-        <span class="logo-text">prachi<span class="logo-dot">.</span></span>
-      </a>
-      <p class="footer-location">Orlando, FL · <a href="mailto:prachi.saibewar.cs@gmail.com">prachi.saibewar.cs@gmail.com</a></p>
+    <div class="wrap footer-inner">
+      <span>© <span id="year">2026</span> Prachi Saibewar · Orlando, FL</span>
+      <nav aria-label="Footer">
+        <a href="https://www.linkedin.com/in/prachi-saibewar/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/prachics" target="_blank" rel="noopener">GitHub</a>
+        <a href="#hero">Back to top ↑</a>
+      </nav>
     </div>
   </footer>
 
   <script src="./js/scripts.min.js"></script>
-
 </body>
 </html>
