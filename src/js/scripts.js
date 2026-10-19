@@ -9,6 +9,36 @@ const onHome = !!document.getElementById('impact');
 const home = onHome ? '' : './index.html';
 const EMAIL = 'prachi.saibewar.cs@gmail.com';
 
+// Deep links (index.html#contact) land instantly and again once web fonts have settled the layout;
+// smooth scrolling is switched on only after that, for in-page clicks.
+function settleHash() {
+  const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (target) target.scrollIntoView();
+}
+window.addEventListener('load', () => {
+  const fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+  fontsReady.then(() => {
+    settleHash();
+    requestAnimationFrame(() => root.classList.add('smooth'));
+  });
+});
+
+// Short confirmations ("Copied") in one shared live region
+let toastEl = null;
+let toastTimer = 0;
+function toast(msg) {
+  if (!toastEl) {
+    toastEl = document.createElement('div');
+    toastEl.className = 'toast';
+    toastEl.setAttribute('role', 'status');
+    document.body.appendChild(toastEl);
+  }
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1800);
+}
+
 // Top bar border once the page has scrolled
 if (topbar) {
   const onScroll = () => topbar.classList.toggle('scrolled', window.scrollY > 8);
@@ -22,26 +52,36 @@ function toggleTheme() {
   const current = root.dataset.theme || (systemDark ? 'dark' : 'light');
   const next = current === 'dark' ? 'light' : 'dark';
   root.dataset.theme = next;
+  document.querySelectorAll('meta[name="theme-color"]').forEach(m => { m.content = next === 'dark' ? '#0b0d12' : '#f7f7f5'; });
   try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked: theme lasts for this page only */ }
 }
 document.querySelectorAll('[data-theme-toggle]').forEach(btn => btn.addEventListener('click', toggleTheme));
 
-// Copy the email address, with a fallback for browsers without the async clipboard
-function copyEmail(statusEl) {
-  const done = () => {
-    if (!statusEl) return;
-    statusEl.textContent = 'Copied';
-    setTimeout(() => { statusEl.textContent = ''; }, 2000);
-  };
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(EMAIL).then(done, () => {});
-    return;
-  }
+// Copy the email address; falls back to a hidden textarea when the async clipboard is missing or refused
+function copyFallback() {
   const ta = document.createElement('textarea');
   ta.value = EMAIL; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
   document.body.appendChild(ta); ta.select();
-  try { document.execCommand('copy'); done(); } catch (e) { /* nothing to do */ }
+  let ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
   ta.remove();
+  return ok;
+}
+function copyEmail(statusEl) {
+  const report = ok => {
+    const msg = ok ? 'Copied ' + EMAIL : 'Copy failed. The address is ' + EMAIL;
+    if (statusEl) {
+      statusEl.textContent = ok ? 'Copied' : "Couldn't copy";
+      setTimeout(() => { statusEl.textContent = ''; }, 2000);
+    } else {
+      toast(msg);
+    }
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(EMAIL).then(() => report(true), () => report(copyFallback()));
+  } else {
+    report(copyFallback());
+  }
 }
 document.querySelectorAll('[data-copy]').forEach(btn => {
   btn.addEventListener('click', () => copyEmail(btn.parentElement.querySelector('.copied')));
@@ -52,6 +92,12 @@ const dialog = document.getElementById('cmdk');
 if (dialog && typeof dialog.showModal === 'function') {
   const input = document.getElementById('cmdk-input');
   const list = document.getElementById('cmdk-list');
+  input.setAttribute('role', 'combobox');
+  input.setAttribute('aria-expanded', 'true');
+  input.setAttribute('aria-controls', 'cmdk-list');
+  input.setAttribute('aria-autocomplete', 'list');
+  list.setAttribute('role', 'listbox');
+  list.setAttribute('aria-label', 'Sections and links');
   const items = [
     { group: 'Sections', label: 'Impact', hint: '01', href: home + '#impact' },
     { group: 'Sections', label: 'Projects', hint: '02', href: home + '#work' },
@@ -80,13 +126,16 @@ if (dialog && typeof dialog.showModal === 'function') {
     visible.forEach((it, n) => {
       if (it.group !== lastGroup) {
         const g = document.createElement('li');
-        g.className = 'cmdk-group'; g.textContent = it.group; g.setAttribute('aria-hidden', 'true');
+        g.className = 'cmdk-group'; g.textContent = it.group; g.setAttribute('role', 'presentation');
         list.appendChild(g);
         lastGroup = it.group;
       }
       const li = document.createElement('li');
+      li.setAttribute('role', 'presentation');
       const el = document.createElement(it.href ? 'a' : 'button');
       el.className = 'cmdk-item';
+      el.id = 'cmdk-opt-' + n;
+      el.setAttribute('role', 'option');
       if (it.href) {
         el.href = it.href;
         if (it.external) { el.target = '_blank'; el.rel = 'noopener'; }
@@ -103,7 +152,7 @@ if (dialog && typeof dialog.showModal === 'function') {
     });
     if (!visible.length) {
       const li = document.createElement('li');
-      li.className = 'cmdk-empty'; li.textContent = 'No matches';
+      li.className = 'cmdk-empty'; li.textContent = 'No matches'; li.setAttribute('role', 'presentation');
       list.appendChild(li);
     }
     select(0, false);
@@ -111,9 +160,17 @@ if (dialog && typeof dialog.showModal === 'function') {
 
   function select(n, scroll) {
     sel = n;
-    list.querySelectorAll('.cmdk-item').forEach((el, i) => el.classList.toggle('sel', i === n));
-    const cur = list.querySelectorAll('.cmdk-item')[n];
-    if (cur && scroll) cur.scrollIntoView({ block: 'nearest' });
+    const all = list.querySelectorAll('.cmdk-item');
+    all.forEach((el, i) => {
+      el.classList.toggle('sel', i === n);
+      el.setAttribute('aria-selected', String(i === n));
+    });
+    const cur = all[n];
+    if (cur) input.setAttribute('aria-activedescendant', cur.id); else input.removeAttribute('aria-activedescendant');
+    if (!cur || !scroll) return;
+    // When focus is in the list (touch screens), focus follows the highlight so Enter opens it.
+    if (list.contains(document.activeElement)) cur.focus({ preventScroll: true });
+    cur.scrollIntoView({ block: 'nearest' });
   }
 
   // Links navigate by themselves; the menu just closes. Actions run here.
