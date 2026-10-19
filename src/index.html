@@ -61,6 +61,7 @@
           <li><a href="#toolkit" class="nav-link">Toolkit</a></li>
           <li><a href="#open-source" class="nav-link">Open source</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="nav-mobile-only"><a href="./Prachi_Saibewar_Resume.pdf" class="nav-link" target="_blank" rel="noopener">Résumé ↗</a></li>
         </ul>
       </nav>
       <div class="header-actions">
@@ -101,7 +102,7 @@
             <div class="portrait-frame">
               <img src="./images/profile.jpg" alt="Prachi Saibewar" width="800" height="800" />
             </div>
-            <span class="portrait-chip">Backend / AI / Full-stack</span>
+            <span class="portrait-chip">Backend / AI / Full&#8209;stack</span>
           </div>
         </div>
         <dl class="status-strip">
@@ -160,12 +161,13 @@
             <p class="feature-problem">An incident-response agent for on-call engineers. It reads logs, metrics and past incidents, finds the likely cause, and proposes a fix. Nothing that changes production runs until a person approves it.</p>
             <div class="flow" id="iq-flow" aria-label="How an investigation runs">
               <span class="flow-label">How an investigation runs</span>
-              <span class="flow-step">Report</span><span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step">Retrieve</span><span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step">Run tools</span><span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step">Reflect</span><span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step">Propose</span><span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step gate">Human approval</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-item"><span class="flow-step">Report</span><span class="flow-arrow" aria-hidden="true">→</span></span>
+              <span class="flow-item"><span class="flow-step">Retrieve</span><span class="flow-arrow" aria-hidden="true">→</span></span>
+              <span class="flow-item"><span class="flow-step">Plan</span><span class="flow-arrow" aria-hidden="true">→</span></span>
+              <span class="flow-item"><span class="flow-step">Run tools</span><span class="flow-arrow" aria-hidden="true">→</span></span>
+              <span class="flow-item"><span class="flow-step">Reflect</span><span class="flow-arrow" aria-hidden="true">→</span></span>
+              <span class="flow-item"><span class="flow-step">Propose</span><span class="flow-arrow" aria-hidden="true">→</span></span>
+              <span class="flow-item"><span class="flow-step gate">Human approval</span><span class="flow-arrow" aria-hidden="true">→</span></span>
               <span class="flow-step">Act once</span>
             </div>
             <ul class="feature-points">
@@ -203,9 +205,9 @@
             <p class="feature-problem">A REST API and map UI for finding points of interest within a radius, filtered by category and rating, with the distance to each result.</p>
             <div class="flow" aria-label="How a radius query runs">
               <span class="flow-label">How a radius query runs</span>
-              <span class="flow-step">lat · lng · radius</span><span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step">ST_DWithin on geography</span><span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step">GIST index</span><span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-item"><span class="flow-step">lat · lng · radius</span><span class="flow-arrow" aria-hidden="true">→</span></span>
+              <span class="flow-item"><span class="flow-step">ST_DWithin on geography</span><span class="flow-arrow" aria-hidden="true">→</span></span>
+              <span class="flow-item"><span class="flow-step">GIST index</span><span class="flow-arrow" aria-hidden="true">→</span></span>
               <span class="flow-step">Results + distance</span>
             </div>
             <ul class="feature-points">
@@ -238,7 +240,7 @@
           <li>
             <a class="card reveal" href="https://chartalist.org" target="_blank" rel="noopener">
               <span class="card-kicker">Full-stack · Research platform</span>
-              <h3>Chartalist.org <span class="arrow" aria-hidden="true">↗</span></h3>
+              <h3>Chartalist.org&nbsp;<span class="arrow" aria-hidden="true">↗</span></h3>
               <p>Led the rebuild of the NeurIPS 2022 blockchain-dataset platform from legacy PHP to Next.js/TypeScript and Node.js. 92/100 desktop Lighthouse performance.</p>
               <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Node.js</li></ul>
             </a>
@@ -246,7 +248,7 @@
           <li>
             <a class="card reveal" href="https://github.com/prachics/FinAgent" target="_blank" rel="noopener">
               <span class="card-kicker">Multi-agent · LLM</span>
-              <h3>FinAgent Pro <span class="arrow" aria-hidden="true">↗</span></h3>
+              <h3>FinAgent Pro&nbsp;<span class="arrow" aria-hidden="true">↗</span></h3>
               <p>Multi-agent equity research: six agent functions for market data, fundamentals, technicals, risk, ESG and the final report.</p>
               <ul class="tags"><li>Python</li><li>CrewAI</li><li>Streamlit</li></ul>
             </a>
@@ -254,7 +256,7 @@
           <li>
             <a class="card reveal" href="https://github.com/prachics/LLM-SEC-8K-Product-Extractor" target="_blank" rel="noopener">
               <span class="card-kicker">LLM extraction · NLP</span>
-              <h3>SEC 8-K Product Extractor <span class="arrow" aria-hidden="true">↗</span></h3>
+              <h3>SEC 8-K Product Extractor&nbsp;<span class="arrow" aria-hidden="true">↗</span></h3>
               <p>Finds new-product announcements in SEC 8-K filings with an LLM plus named-entity recognition, and emits structured company, ticker and filing-time records.</p>
               <ul class="tags"><li>Python</li><li>OpenAI API</li><li>spaCy</li></ul>
             </a>
@@ -264,7 +266,7 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section" style="padding-top:0">
+    <section id="experience" class="section">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -360,13 +362,13 @@
             <p class="list-title">Open source &amp; research code</p>
             <ul class="row-list">
               <li><a class="row" href="https://github.com/FDataLab/Chainlet-Orbits/pull/1" target="_blank" rel="noopener">
-                <span class="row-name">FDataLab/Chainlet-Orbits #1 <span class="arrow" aria-hidden="true">↗</span></span><span class="badge badge--done">Merged</span>
+                <span class="row-name">FDataLab/Chainlet-Orbits #1&nbsp;<span class="arrow" aria-hidden="true">↗</span></span><span class="badge badge--done">Merged</span>
                 <span class="row-desc">Transaction ETL tooling for the codebase behind Chainlet Orbits (KDD 2025): raw archives into graph edge lists.</span></a></li>
               <li><a class="row" href="https://github.com/networkx/networkx/pull/7974" target="_blank" rel="noopener">
-                <span class="row-name">networkx/networkx #7974 <span class="arrow" aria-hidden="true">↗</span></span><span class="badge">In review</span>
+                <span class="row-name">networkx/networkx #7974&nbsp;<span class="arrow" aria-hidden="true">↗</span></span><span class="badge">In review</span>
                 <span class="row-desc">Adds the AlphaCore data-depth core decomposition algorithm to NetworkX.</span></a></li>
               <li><a class="row" href="https://github.com/friedhelmvictor/alphacore/pull/3" target="_blank" rel="noopener">
-                <span class="row-name">friedhelmvictor/alphacore #3 <span class="arrow" aria-hidden="true">↗</span></span><span class="badge">In review</span>
+                <span class="row-name">friedhelmvictor/alphacore #3&nbsp;<span class="arrow" aria-hidden="true">↗</span></span><span class="badge">In review</span>
                 <span class="row-desc">Refactor of the reference Python and R implementations from the AlphaCore paper (KDD 2021).</span></a></li>
             </ul>
           </div>
@@ -374,10 +376,10 @@
             <p class="list-title">Writing</p>
             <ul class="row-list">
               <li><a class="row" href="./incidentiq.html">
-                <span class="row-name">Fix the measurement before the agent <span class="arrow" aria-hidden="true">→</span></span><span class="badge">Case study</span>
+                <span class="row-name">Fix the measurement before the agent&nbsp;<span class="arrow" aria-hidden="true">→</span></span><span class="badge">Case study</span>
                 <span class="row-desc">Building and honestly evaluating IncidentIQ: what moved the score, and the engineering findings along the way.</span></a></li>
               <li><a class="row" href="https://www.linkedin.com/in/prachi-saibewar/recent-activity/all/" target="_blank" rel="noopener">
-                <span class="row-name">Read access vs. action in AI email assistants <span class="arrow" aria-hidden="true">↗</span></span><span class="badge">LinkedIn</span>
+                <span class="row-name">Read access vs. action in AI email assistants&nbsp;<span class="arrow" aria-hidden="true">↗</span></span><span class="badge">LinkedIn</span>
                 <span class="row-desc">Indirect prompt injection, and why an assistant that summarizes an inbox shouldn't also be able to send email.</span></a></li>
             </ul>
           </div>
@@ -404,7 +406,7 @@
     <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="wrap">
-        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Hiring for backend, AI or full-stack?</p>
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Hiring for backend, AI or <span class="nowrap">full-stack?</span></p>
         <h2 class="contact-title">Let's build something <span class="serif">reliable.</span></h2>
         <div class="contact-grid">
           <div>

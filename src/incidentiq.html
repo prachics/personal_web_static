@@ -9,9 +9,13 @@
     <meta property="og:description" content="An incident-response agent with durable state, a structural approval gate, tracing, an MCP server and an honest evaluation harness." />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://prachisaibewar.com/incidentiq.html" />
-    <meta property="og:image" content="https://prachisaibewar.com/images/incidentiq-ui.jpg" />
+    <meta property="og:image" content="https://prachisaibewar.com/images/og-incidentiq.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://prachisaibewar.com/images/incidentiq-ui.jpg" />
+    <meta name="twitter:title" content="IncidentIQ case study — Prachi Saibewar" />
+    <meta name="twitter:description" content="An incident-response agent with durable state, a structural approval gate, tracing, an MCP server and an honest evaluation harness." />
+    <meta name="twitter:image" content="https://prachisaibewar.com/images/og-incidentiq.png" />
+    <meta name="theme-color" content="#f5f1e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e1511" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/logo-mark.png" />
     <link rel="canonical" href="https://prachisaibewar.com/incidentiq.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,6 +39,7 @@
           <li><a href="./index.html#work" class="nav-link">Work</a></li>
           <li><a href="./index.html#experience" class="nav-link">Experience</a></li>
           <li><a href="./index.html#contact" class="nav-link">Contact</a></li>
+          <li class="nav-mobile-only"><a href="./Prachi_Saibewar_Resume.pdf" class="nav-link" target="_blank" rel="noopener">Résumé ↗</a></li>
         </ul>
       </nav>
       <div class="header-actions">
@@ -67,7 +72,7 @@
         <div class="cs-media">
           <div class="browser">
             <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>incidentiq · investigation</span></div>
-            <img src="./images/incidentiq-ui.jpg" alt="IncidentIQ web UI: an investigation's live timeline, the evidence it gathered and the proposed action" width="1600" height="1000" />
+            <img src="./images/incidentiq-ui.jpg" alt="IncidentIQ web UI: an investigation's live timeline, the evidence it gathered and the proposed action" width="1600" height="1075" />
           </div>
         </div>
       </div>
@@ -93,9 +98,10 @@
           <p><strong>Retrieval after every tool call.</strong> Retrieval on the bare on-call report scores Recall@5 0.461; enriched with the error signatures the tools surface, it scores 0.800. So retrieving again is worth an iteration.</p>
           <p><strong>An approval gate in three places:</strong> a tool-class attribute the graph reads, LangGraph's <code>interrupt_before</code> with a checkpoint written, and a runtime check that refuses to run without an approval row naming that investigation and tool.</p>
           <p><strong>Approved actions run once.</strong> The client retries with the approval id as an <code>Idempotency-Key</code>; the control plane replays its first response to every retry, including after a crash between the action and the checkpoint.</p>
-          <div class="cs-figure">
-            <img src="./images/incidentiq-architecture.svg" alt="IncidentIQ architecture: a LangGraph loop of intake, retrieve, plan, execute_tool, reflect, propose, await_approval, act and summarize, over PostgreSQL 16 with pgvector" loading="lazy" />
-          </div>
+          <a class="cs-figure" href="./images/incidentiq-architecture.svg" target="_blank" rel="noopener" aria-label="Open the architecture diagram full size">
+            <img class="cs-diagram" src="./images/incidentiq-architecture.svg" alt="IncidentIQ architecture: a LangGraph loop of intake, retrieve, plan, execute_tool, reflect, propose, await_approval, act and summarize, over PostgreSQL 16 with pgvector" loading="lazy" />
+          </a>
+          <p class="note">Tap the diagram to open it full size.</p>
           <p>Around the agent: a FastAPI service with viewer and approver API keys, a React/TypeScript UI with a live timeline over server-sent events, OpenTelemetry traces that follow an investigation across threads and HTTP (viewable in Jaeger or Langfuse), Prometheus metrics, and an MCP server that exposes only the read-only diagnostic tools.</p>
         </div>
       </div>
@@ -134,7 +140,7 @@
         <div><p class="label">04</p><h2>Fix the measurement before the agent</h2></div>
         <div class="prose">
           <p>Earlier runs scored 40% and then 50%. Before changing the agent, I read the failing cases end to end, and several failures were the harness, not the model. It had been approving arguments the approval API refuses, grading against one narrative per failure mode word for word, planting metric anomalies that hourly averages hid, and letting sampling alone move the score ten points.</p>
-          <p>With those fixed, the same Phase 3 agent scored 70%. Three agent changes, measured one at a time on the same harness, scored 70%, 80% and 70%. The third costs a scenario on purpose: the agent may no longer propose an action on a service whose own logs and metrics show nothing abnormal, after it once applied a past incident's fix to a healthy service.</p>
+          <p>With those fixed, the same agent scored 70%. Three agent changes, measured one at a time on the same harness, scored 70%, 80% and 70%. The third costs a scenario on purpose: the agent may no longer propose an action on a service whose own logs and metrics show nothing abnormal, after it once applied a past incident's fix to a healthy service.</p>
           <p>Every abstention scenario passes, and the remaining misses are listed by kind in the repository, not averaged away.</p>
         </div>
       </div>
@@ -153,7 +159,7 @@
         <div><p class="label">06</p><h2>Built and tested</h2></div>
         <div class="prose">
           <ul>
-            <li>Phases 1–7 complete: corpora and mock infrastructure, hybrid retrieval, the LangGraph agent and evaluation harness, the approval API and audit trail, the web UI, tracing and metrics, and the MCP server.</li>
+            <li>All seven planned phases are complete: corpora and mock infrastructure, hybrid retrieval, the LangGraph agent and evaluation harness, the approval API and audit trail, the web UI, tracing and metrics, and the MCP server.</li>
             <li>695 backend tests and 23 frontend tests. CI runs the backend against Postgres with pgvector, and the web app's typecheck, tests and build, on every push.</li>
             <li>Tests crash a run mid-investigation and resume it, retry approved actions against injected faults, and check that MCP clients can never reach a write tool.</li>
           </ul>
