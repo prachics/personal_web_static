@@ -106,7 +106,7 @@ if (dialog && typeof dialog.showModal === 'function') {
     { group: 'Sections', label: 'Education', hint: '06', href: home + '#education' },
     { group: 'Sections', label: 'Contact', hint: '07', href: home + '#contact' },
     { group: 'Links', label: 'IncidentIQ case study', hint: 'page', href: './incidentiq.html' },
-    { group: 'Links', label: 'Résumé (PDF)', hint: '↗', href: './Prachi_Saibewar_Resume.pdf', external: true },
+    { group: 'Links', label: 'Résumé (PDF)', hint: '↗', href: './Prachi-Saibewar-Resume.pdf', external: true },
     { group: 'Links', label: 'GitHub', hint: '↗', href: 'https://github.com/prachics', external: true },
     { group: 'Links', label: 'LinkedIn', hint: '↗', href: 'https://www.linkedin.com/in/prachi-saibewar/', external: true },
     { group: 'Actions', label: 'Copy email address', hint: 'copy', run: () => copyEmail(null) },

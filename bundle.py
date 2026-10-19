@@ -25,6 +25,7 @@ FILES=[
   "libs/**/*",
   "images/*",  # We expect a flat directory of images
   "Prachi_Saibewar_Resume.pdf",  # The main star! Resume PDF
+  "Prachi-Saibewar-Resume.pdf",  # Current resume; the underscore name stays for links already shared
 ]
 
 GTAG_URL = Template("https://www.googletagmanager.com/gtag/js?id=$gtagid")

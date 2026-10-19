@@ -203,16 +203,16 @@ p, li, td, dd { text-wrap: pretty; }
 .btn--icon svg { width: 18px; height: 18px; }
 @media (max-width: 420px) { .hero-cta { gap: 8px; } .hero-cta .btn:not(.btn--icon) { padding: 0 13px; } }
 
-.hero-visual { position: relative; display: grid; justify-items: end; max-width: 460px; width: 100%; justify-self: center; }
+.hero-visual { position: relative; display: grid; justify-items: center; gap: 16px; max-width: 400px; width: 100%; justify-self: center; }
 .portrait {
-  width: min(78%, 330px); aspect-ratio: 4 / 5; border-radius: 22px; padding: 2px;
+  width: min(100%, 320px); aspect-ratio: 1 / 1; border-radius: 22px; padding: 2px;
   background: linear-gradient(140deg, var(--c1), var(--c2) 45%, var(--c3));
   box-shadow: 0 30px 80px -30px color-mix(in srgb, var(--c2) 60%, transparent);
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; border-radius: 20px; }
 
 .trace {
-  position: absolute; left: -24px; bottom: -28px; width: min(96%, 380px);
+  position: relative; width: 100%; max-width: 400px;
   background: color-mix(in srgb, var(--panel) 92%, transparent);
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   border: 1px solid var(--line-strong); border-radius: 12px; box-shadow: var(--shadow-lg);
@@ -247,9 +247,7 @@ p, li, td, dd { text-wrap: pretty; }
   .hero-stats div:nth-child(n+3) { border-top: 1px solid var(--line); }
 }
 @media (max-width: 1023px) {
-  .hero-visual { justify-items: center; margin-bottom: 20px; }
-  .portrait { width: min(62%, 280px); }
-  .trace { position: relative; left: auto; bottom: auto; width: 100%; max-width: 420px; margin-top: -48px; }
+  .portrait { width: min(62%, 260px); }
 }
 
 .dot {
