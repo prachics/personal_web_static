@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <script>
       document.documentElement.classList.remove('no-js');
-      (function () { try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {} })();
+      (function () { try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') { document.documentElement.dataset.theme = t; document.addEventListener('DOMContentLoaded', function () { document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.content = t === 'dark' ? '#0b0d12' : '#f7f7f5'; }); }); } } catch (e) {} })();
     </script>
   </head>
 
@@ -94,7 +94,7 @@
           <a class="cs-figure" href="./images/incidentiq-architecture.svg" target="_blank" rel="noopener" aria-label="Open the architecture diagram full size">
             <img class="cs-diagram" src="./images/incidentiq-architecture.svg" alt="IncidentIQ architecture: a LangGraph loop of intake, retrieve, plan, execute_tool, reflect, propose, await_approval, act and summarize, over PostgreSQL 16 with pgvector" loading="lazy" />
           </a>
-          <p class="note">Tap the diagram to open it full size.</p>
+          <p class="note">Scroll the diagram sideways on a phone, or tap it to open it full size.</p>
           <p>Around the agent: a FastAPI service with viewer and approver API keys, a React/TypeScript UI with a live timeline over server-sent events, OpenTelemetry traces that follow an investigation across threads and HTTP (viewable in Jaeger or Langfuse), Prometheus metrics, and an MCP server that exposes only the read-only diagnostic tools.</p>
         </div>
       </section>
@@ -107,22 +107,22 @@
             <table class="data-table">
               <caption>Retrieval · 12 labelled situations</caption>
               <tbody>
-                <tr><td>Recall@5 (capped)</td><td><b>0.800</b></td></tr>
-                <tr><td>Recall@5 (uncapped)</td><td>0.608</td></tr>
-                <tr><td>Hit@5</td><td>0.917</td></tr>
-                <tr><td>MRR</td><td>0.917</td></tr>
-                <tr><td>Median latency</td><td>28.7 ms</td></tr>
+                <tr><th scope="row">Recall@5 (capped)</th><td><b>0.800</b></td></tr>
+                <tr><th scope="row">Recall@5 (uncapped)</th><td>0.608</td></tr>
+                <tr><th scope="row">Hit@5</th><td>0.917</td></tr>
+                <tr><th scope="row">MRR</th><td>0.917</td></tr>
+                <tr><th scope="row">Median latency</th><td>28.7 ms</td></tr>
               </tbody>
             </table>
             <table class="data-table">
               <caption>Agent · 10-scenario stratified sample</caption>
               <tbody>
-                <tr><td>Task completion (target ≥ 90%)</td><td><b>70.0%</b></td></tr>
-                <tr><td>Abstention accuracy</td><td><b>100%</b></td></tr>
-                <tr><td>Tool execution success</td><td>80.7% · 31 calls</td></tr>
-                <tr><td>Recovery after injected failure</td><td>50%</td></tr>
-                <tr><td>Median / p95 latency</td><td>108 s / 157 s</td></tr>
-                <tr><td>Groundedness</td><td>not yet scored</td></tr>
+                <tr><th scope="row">Task completion (target ≥ 90%)</th><td><b>70.0%</b></td></tr>
+                <tr><th scope="row">Abstention accuracy</th><td><b>100%</b></td></tr>
+                <tr><th scope="row">Tool execution success</th><td>80.7% · 31 calls</td></tr>
+                <tr><th scope="row">Recovery after injected failure</th><td>50%</td></tr>
+                <tr><th scope="row">Median / p95 latency</th><td>108 s / 157 s</td></tr>
+                <tr><th scope="row">Groundedness</th><td>not yet scored</td></tr>
               </tbody>
             </table>
           </div>

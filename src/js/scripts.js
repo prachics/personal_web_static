@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
   const fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
   fontsReady.then(() => {
     settleHash();
-    requestAnimationFrame(() => root.classList.add('smooth'));
+    if (!reduceMotion) requestAnimationFrame(() => root.classList.add('smooth'));
   });
 });
 

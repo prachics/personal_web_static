@@ -26,7 +26,7 @@
     <script>
       // Applied before first paint so a saved theme never flashes the other one.
       document.documentElement.classList.remove('no-js');
-      (function () { try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {} })();
+      (function () { try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') { document.documentElement.dataset.theme = t; document.addEventListener('DOMContentLoaded', function () { document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.content = t === 'dark' ? '#0b0d12' : '#f7f7f5'; }); }); } } catch (e) {} })();
     </script>
     <script type="application/ld+json">
       {
@@ -302,7 +302,7 @@
                 <li>Cut p95 latency of real-time decisioning APIs by <b>29% (185 → 132 ms)</b> with Redis caching and parallel asyncio retrieval under production load.</li>
                 <li>Owned 0→1 a React/TypeScript identity-tracing tool for the mParticle CDP (React Query over C#/.NET APIs, visualizing profile merges): investigations <b>about 30% faster</b>.</li>
                 <li>Built identity-resolved and predictive customer attributes with C#/.NET APIs and event-driven pipelines that enforce GDPR consent and CCPA opt-outs: <b>eligible customer signals +23%</b>.</li>
-                <li>Added OpenTelemetry tracing, Prometheus metrics and Chronosphere alerting, and joined the on-call rotation: <b>detection 20 → 8 min, resolution 60 → 25 min</b>.</li>
+                <li>Added OpenTelemetry tracing, Prometheus metrics and Chronosphere alerting, and joined the on-call rotation: <b>detection 20 → 8&nbsp;min, resolution 60 → 25&nbsp;min</b>.</li>
                 <li>Built Python LLM evaluation and guardrail workflows with structured outputs for ACE, Rokt's generative ad-content engine: <b>rejected generations 12.4% → 4.8%</b>.</li>
               </ul>
               <ul class="tags"><li>C#/.NET</li><li>Python</li><li>FastAPI</li><li>React</li><li>TypeScript</li><li>Redis</li><li>OpenTelemetry</li><li>AWS</li></ul>
@@ -316,7 +316,7 @@
               <ul class="job-points">
                 <li>Built a 300+ question evaluation set to tune retrieval, chunking and prompts: <b>grounded answers 79% → 92%</b>.</li>
                 <li>Added schema validation, retries and human review: <b>98%+ valid responses, 35% fewer manual corrections</b>.</li>
-                <li>Built a Python/FastAPI RAG search service over PostgreSQL/pgvector for research papers and code: <b>lookups ~20 min → under 5</b>.</li>
+                <li>Built a Python/FastAPI RAG search service over PostgreSQL/pgvector for research papers and code: <b>lookups ~20&nbsp;min → under&nbsp;5</b>.</li>
                 <li>Led the Chartalist.org rebuild from legacy PHP to Next.js/TypeScript and Node.js: <b>92/100 desktop Lighthouse performance</b>.</li>
               </ul>
               <ul class="tags"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>pgvector</li><li>LLM APIs</li><li>Next.js</li><li>TypeScript</li></ul>
